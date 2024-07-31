@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!--- Themes by g4rzk (Angga Kurniawan) --->
+	
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -32,6 +34,15 @@
             font-size: 1.5em;
             font-weight: 600;
         }
+        .navbar a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1em;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
         .container {
             max-width: 800px;
             margin: 50px auto;
@@ -50,8 +61,13 @@
         }
         p {
             text-align: center;
+            font-size: 1em;
             color: #666666;
             margin-bottom: 15px;
+        }
+        a, i, li {
+        	font-size: 1em;
+        	color: #666666;
         }
         .faq-header {
             display: flex;
@@ -60,8 +76,8 @@
             margin-bottom: 20px;
         }
         .faq-header img {
-            width: 40px;
-            height: 40px;
+            width: 200px;
+            height: 100px;
             margin-right: 10px;
         }
         .faq-item {
@@ -90,7 +106,7 @@
         .faq-item button:after {
             content: '⧩';
             margin-left: auto;
-            transition: transform 0.3s ease;
+            transition: transform 0.5s ease;
         }
         .faq-item button.active:after {
             transform: rotate(180deg);
@@ -109,7 +125,7 @@
             text-align: center;
             padding: 20px;
             background-color: #ffffff;
-            margin-top: 40px;
+            margin-top: 20px;
             border-top: 1px solid #e0e0e0;
         }
         footer a {
@@ -138,9 +154,13 @@
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">Evony TKR</div>
+        <!-- HIDE (NEED FIX) <a href="#">Home</a>
+        <a href="#faq">Rules</a>
+        <a href="#contact">Contact</a> -->
     </div>
     
     <div class="container" id="faq">
@@ -162,6 +182,13 @@
             </button>
             <div class="content">
                 <a>Server 1366 + 1402 is a permanent NAP (Non-Aggression Pact) server and therefore does NOT follow the Evony event calendar. The Monarch Competition KE (Kill Event) is not in effect.</a>
+                <li>Attacking and/or scouting any keep (castle) or subordinate city (sub) that belongs to a player in an alliance, or attacking/scouting any alliance city, is strictly prohibited. If a player desires this protection, they may join an alliance or spend 200 gems to create their own alliance. </li>
+                <li>If a player in an alliance is attacked, the attacker will either pay compensation or be declared KoS (Kill on Sight) by the Server Council through a mail sent by the ruling King/Queen. </li>
+                <li>If a player must expel their alt/farm from an alliance to plunder, the player must change the name of that alt/farm to prevent other players from attacking it. The name must contain the alliance acronym and the term mini, farm, rss, ore, wood, stone, food, etc. (Examples: SCCrss4Me, NFGMiniDel, PTOFarm1)</li>
+                <ul>
+                	<li>Any keep that is not in an alliance and does not have the name changed as above is vulnerable to attack. </li>
+				</ul>
+                <li>If an R5/4 wants to expel a player and/or their alt/farm from the alliance, they must give the player notification and 24 hours to respond. This gives the player the opportunity to join a new alliance, make their own alliance, or bubble. If the player does not respond within 24 hours, the R5/4 may expel the player’s keep and/or alt(s) at their discretion.</li>
             </div>
         </div>
         
@@ -172,9 +199,9 @@
             <div class="content">
                 <li>Player owned sub cities must NOT be stolen, regardless whether or not the owner belongs to an alliance. If a player leaves the server and does not give their sub cities away, the alliance is responsible for their distribution.</li>
 				<li>Do NOT attack an NPC sub city if a player is sitting next to it. The player may be leveling Generals or switching sub cities.</li>
-				<br>
-				<i><b>It is almost impossible to cancel attacks if you are next to a target, so if Player1 attempts to take an NPC sub city while Player2 is in the process of leveling generals, Player1 will be responsible for compensation. Player1 will also need to give the sub back or risk becoming KoS.</b></i>
-				<br>
+				<ul>
+					<li>It is almost impossible to cancel attacks if you are next to a target, so if Player1 attempts to take an NPC sub city while Player2 is in the process of leveling generals, Player1 will be responsible for compensation. Player1 will also need to give the sub back or risk becoming KoS.</li>
+				</ul>
 				<li>For the sake of proving ownership, it is beneficial to the player to take a screenshot of their keep next to the sub city before they release it. </li>
 				<li>R5/4s are responsible for kicking sub city thieves from the alliance for a two-week probationary period. If the player continues to steal sub cities and/or does not return the sub city to the rightful owner, they will become KoS.</li>
 				<li>KOS-players lose protection from all server rules. R5/4s are responsible for expelling and/or not accepting the KoS member. If an alliance harbors a KoS member for more than 12 hours, the entire alliance will become KoS. </li>
@@ -186,22 +213,26 @@
                 RULES 4: Tiles, Relics, Pyramid and Barbs
             </button>
             <div class="content">
-                <i>Do NOT attack players in resource tiles, relics, pyramids, and/or barbarian castles; unless that player is KoS or it is during Purge (see Rule 6).</i>
+                <a>Do NOT attack players in resource tiles, relics, pyramids, and/or barbarian castles; unless that player is KoS or it is during Purge (see Rule 6).</a>
                 <br>
 				<b>Barbarians: Do NOT attack Barbarian Castles occupied by an alliance. </b>
-				<li>It is advisable to take a screenshot as soon as you start marching towards a Barb Castle as proof of “ownership.”</li>
-				<li>Attackers are obligated to pay compensation or risk going KoS.</li>
-				<br>
+				<ul>
+					<li>It is advisable to take a screenshot as soon as you start marching towards a Barb Castle as proof of “ownership.”</li>
+					<li>Attackers are obligated to pay compensation or risk going KoS.</li>
+				</ul>
 				<b>Pyramids: If you see a player marching to a pyramid, do NOT send a speed march or port next to it to try to claim it. </b>
-				<li>Pyramid theft is responsible for multiple disputes, so it is advisable to take a screenshot as soon as you start marching towards the pyramid. </li>
-				<li>If someone steals your pyramid, inform your R5/4s and provide the screenshot as proof, allowing them to inform the thief’s alliance of the situation. Alliance leadership is responsible for reprimanding the pyramid thief. If pyramid theft becomes habitual, the issue will go to Server Council. </li>
-				<li>The penalty for attacking an occupied pyramid will be twice the compensation to the rightful pyramid owner.</li>
-				<br>
+				<ul>
+					<li>Pyramid theft is responsible for multiple disputes, so it is advisable to take a screenshot as soon as you start marching towards the pyramid. </li>
+					<li>If someone steals your pyramid, inform your R5/4s and provide the screenshot as proof, allowing them to inform the thief’s alliance of the situation. Alliance leadership is responsible for reprimanding the pyramid thief. If pyramid theft becomes habitual, the issue will go to Server Council. </li>
+					<li>The penalty for attacking an occupied pyramid will be twice the compensation to the rightful pyramid owner.</li>
+				</ul>
 				<b>Relics: Relic theft is also a common problem. </b>
-				<li>If another alliance attacks your relic and kills your troops, the attacker will pay compensation or become KoS.</li>
-				<li>If another alliance takes your relic and there are no casualties, send a mail to the person occupying the relic, as well as your and their R5/R4s. </li>
-				<li>If there is communication in less than 12 hours, the occupier can choose to leave the relic or open a new relic. No harm, no foul.</li>
-				<li>If there is no response within 12 hours, you may attack the relic.</li>
+				<ul>
+					<li>If another alliance attacks your relic and kills your troops, the attacker will pay compensation or become KoS.</li>
+					<li>If another alliance takes your relic and there are no casualties, send a mail to the person occupying the relic, as well as your and their R5/R4s. </li>
+					<li>If there is communication in less than 12 hours, the occupier can choose to leave the relic or open a new relic. No harm, no foul.</li>
+					<li>If there is no response within 12 hours, you may attack the relic.</li>
+				</ul>
 				<li>If your teammate steals a relic, which you unknowingly occupy, and the rightful owner attacks it, your teammate is responsible for your compensation.</li>
             </div>
         </div>
@@ -213,9 +244,9 @@
             <div class="content">
                 <li>If a conflict arises regarding rule breaking, players must try to resolve their conflict at the lowest level possible (player to player). If they are not capable of doing so, the involved alliance’s R5/4s must intervene. If the R5/4s are unable to solve the issue, the Server Council will intervene.</li>
 				<li>“Revenge” is not an approved method of conflict resolution. If a player or their alliance reacts without going through Step 1, they will need to send compensation for the resulting damage or go KoS.</li>
-				<br>
-					<i>Accidental hits are especially NOT a cause for retaliation.</i>
-				</br>
+				<ul>
+					<li>Accidental hits are especially NOT a cause for retaliation.</li>
+				</ul>
 				<li>Examples of accidental hits include, but are not limited to, taking a NPC city when a player is sitting next to it, hitting one occupied resource tile, hitting one occupied pyramid or one barb castle during their respective events, etc.</li>
 				<li>If a player makes multiple prohibited attacks, it is malicious intent and the player will be KoS.</li>
             </div>
@@ -227,11 +258,15 @@
             </button>
             <div class="content">
 				<b>Server versus Server War happens every two weeks. It starts at Friday midnight server time and lasts for 48 hours. </b>
-				<li>PURGE: To prevent giving points to the enemy server, a purge will start at 22:00 server time. Before the start of the purge, all players must have a truce shield (bubble) and recall all troops from relics, pyramids, resource tiles, camps, etc. (anywhere a player can get attacked). THERE WILL BE NO SUB CITY STEALING DURING PURGE.</li>
-				<li>Anybody who is purging WILL add Purge to their Monarch name. (examples: <b><i>OdinPurge, PurgerDel, PurgeYou</i></b>)</li>
-				<li>Players may NOT attack anyone with the Purge name format. Members without a bubble and without Purge in their name are vulnerable to attack.</li>
+				<a>PURGE: To prevent giving points to the enemy server, a purge will start at 22:00 server time. Before the start of the purge, all players must have a truce shield (bubble) and recall all troops from relics, pyramids, resource tiles, camps, etc. (anywhere a player can get attacked). <b>THERE WILL BE NO SUB CITY STEALING DURING PURGE.</b></a>
+				<li>Anybody who is purging WILL add Purge to their Monarch name. (examples: <b>OdinPurge, PurgerDel, PurgeYou</b>)</li>
+				<ul>
+					<li>Players may NOT attack anyone with the Purge name format. Members without a bubble and without Purge in their name are vulnerable to attack.</li>
+				</ul>
 				<li>There will be NO promised green bubbles unless there is an extenuating circumstance.</li>
-				<li>Alliance R5/4s know who their active players are and habitual bubble droppers are. Circumstances are only considered extenuating if they are beyond the player’s control, like Evony connection issues and/or family emergencies. In the event an alliance must promise a green bubble, the alliance MUST reinforce the player and it is essential that alliance leadership inform the Server Council so they may brief their purgers.</li>
+				<ul>
+					<li>Alliance R5/4s know who their active players are and habitual bubble droppers are. Circumstances are only considered extenuating if they are beyond the player’s control, like Evony connection issues and/or family emergencies. In the event an alliance must promise a green bubble, the alliance MUST reinforce the player and it is essential that alliance leadership inform the Server Council so they may brief their purgers.</li>
+				</ul>
 			</div>
         </div>
         
@@ -241,11 +276,11 @@
             </button>
             <div class="content">
                 <b>Players who have their Wonder 1 open will be eligible to be Queen or King of the server.</b>
-                <br>
-				<li>Each person will be Queen/King/Conqueror for two consecutive weeks to qualify for opening their Wonder 2. Conquering throne will be played by ear. Priority goes to players needing to open Wonder 2; however, in the event the enemy throne will be challenging to conquer, an older player can conquer to achieve their fame points. In the event the enemy throne will be almost impossible to conquer, there will be a throne truce. </li>
-				<br>
-				<i><b>Throne truce will not be determined until the first day of SvS.</b></i>
-				<li>It is preferable for players to have a positive score in SvS when they get their wings; however, up to 15% of the player’s score may be from negative points. If more than 15% of their score is negative points, they will drop to the bottom of the list for taking King/Queenship, even if they have Wonder 1 open.</li>
+				<a>Each person will be Queen/King/Conqueror for two consecutive weeks to qualify for opening their Wonder 2. Conquering throne will be played by ear. Priority goes to players needing to open Wonder 2; however, in the event the enemy throne will be challenging to conquer, an older player can conquer to achieve their fame points. In the event the enemy throne will be almost impossible to conquer, there will be a throne truce. </a>
+				<ul>
+					<li><b>Throne truce will not be determined until the first day of SvS.</b></li>
+				</ul>
+				<a>It is preferable for players to have a positive score in SvS when they get their wings; however, up to 15% of the player’s score may be from negative points. If more than 15% of their score is negative points, they will drop to the bottom of the list for taking King/Queenship, even if they have Wonder 1 open.</a>
             </div>
         </div>
         <p><i>* Updated date: July 24, 2024</i></p>
@@ -256,7 +291,7 @@
         <p>If you have further questions, please contact us via Discord Server: <a href="https://discord.com/invite/T7T7sRQYTd">1366+1402 Evony TKR</a></p>
     </div>
     <footer>
-        <a>© 2024 - Made by ❤ Server Council</a>
+        <a>© 2024 Made By ❤ Server Council</a>
     </footer>
     <script>
         document.querySelectorAll('.faq-item button').forEach(button => {
