@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!--- Themes by g4rzk (Angga Kurniawan) --->
-	
+
 <html lang="id">
 <head>
     <meta charset="UTF-8">
@@ -8,10 +8,10 @@
     <meta name="keywords" content="1366 server rules evony">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="title" content="1366 Server Rules">
-	<meta name="robots" content="index, follow">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<meta name="language" content="English">
-	<meta name="author" content="g4rzk">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="g4rzk">
 
     <title>1366 + 1402 Rules - Evony TKR</title>
     <link rel="icon" type="image/x-icon" href="./Evony.png">
@@ -19,93 +19,85 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #f5f5f5;
+            <!--- need fixed! 
+            background-image: url('evony_wallpaper.jpg'); /* Background wallpaper baru */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            ---->
+            background-color: #f0f2f5;
             margin: 0;
-            padding: 0;
+            padding: 0; 
+            color: #333333;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 50px auto;
         }
         .navbar {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            background-color: #00bcd4;
-            padding: 10px 20px;
+            background-color: #00796b;
+            padding: 15px 20px;
             color: #ffffff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
         .navbar .logo {
-        	text-align: center;
-            font-size: 1.5em;
+            font-size: 1.75em;
             font-weight: 600;
         }
-        .navbar a {
-            color: #ffffff;
-            text-decoration: none;
-            margin: 0 15px;
-            font-size: 1em;
-        }
-        .navbar a:hover {
-            text-decoration: underline;
-        }
         .container {
-            max-width: 800px;
-            margin: 50px auto;
-            background-color: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            overflow: hidden;
+            background-color: transparent;
+            padding: 0;
         }
         h1 {
             text-align: center;
-            color: #333333;
-            font-size: 2em;
-            font-weight: 600;
+            color: #004d40;
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        h2 {
+            text-align: center;
+            color: #004d40;
+            font-size: 1.5em;
+            font-weight: 700;
             margin-bottom: 20px;
         }
         p {
             text-align: center;
-            font-size: 1em;
-            margin-bottom: 15px;
-        }
-        a, i, li {
-        	font-size: 1em;
-        }
-        .faq-header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 1.1em;
             margin-bottom: 20px;
         }
-        .faq-header img {
-            width: 200px;
-            height: 100px;
-            margin-right: 10px;
-        }
         .faq-item {
-            margin: 10px 0;
+            margin: 15px 0;
             border-bottom: 1px solid #e0e0e0;
-        }
-        .faq-item:last-child {
-            border-bottom: none;
         }
         .faq-item button {
             width: 100%;
-            background-color: #e0f7fa;
+            background-color: #e0f2f1;
             border: none;
-            padding: 15px;
+            padding: 20px;
             text-align: left;
-            font-size: 1em;
+            font-size: 1.1em;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
             display: flex;
             align-items: center;
-            font-weight: 400;
+            font-weight: 600;
+            color: #004d40;
         }
         .faq-item button:hover {
-            background-color: #b2ebf2;
+            background-color: #b2dfdb;
+            color: #004d40;
         }
         .faq-item button:after {
             content: '⧩';
@@ -117,43 +109,126 @@
         }
         .faq-item .content {
             display: none;
-            padding: 15px;
+            padding: 20px;
             background-color: #f1f1f1;
-            border-left: 4px solid #00bcd4;
-            font-size: 0.95em;
+            border-left: 4px solid #00796b;
+            font-size: 1em;
             color: #333333;
             font-weight: 400;
             text-align: left;
+            line-height: 1.6;
+        }
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .image-container p {
+            font-size: 1em;
+            <!--color: #004d40;-->
+            margin-top: 10px;
+        }
+        .coordinates {
+            font-size: 1.1em;
+            color: #333333;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .discord-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .discord-button {
+            background-color: #7289da;
+            color: #ffffff;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .discord-button:hover {
+            background-color: #5a6fb3;
+        }
+        .server-time {
+            text-align: center;
+            font-size: 1.2em;
+            color: #333333;
+            margin: 20px 0;
+        }
+        .youtube-feed {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .youtube-video {
+            display: inline-block;
+            width: 100%;
+            max-width: 300px; /* Ukuran video lebih kecil */
+            margin-bottom: 20px;
         }
         footer {
             text-align: center;
-            padding: 20px;
-            background-color: #ffffff;
-            margin-top: 20px;
-            border-top: 1px solid #e0e0e0;
+            padding: 25px;
+            background-color: #00796b;
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 0.9em;
+            border-top: 3px solid #004d40;
         }
         footer a {
-            color: #00bcd4;
+            color: #b2dfdb;
             text-decoration: none;
             margin: 0 10px;
-            font-size: 0.9em;
             transition: color 0.3s ease;
         }
         footer a:hover {
-            color: #0097a7;
+            color: #ffffff;
         }
-        @media (max-width: 600px) {
-            .container {
-                padding: 15px;
-                margin: 20px;
+        @media (max-width: 768px) {
+            .overlay {
+                padding: 20px;
             }
             .faq-item button {
-                padding: 12px;
-                font-size: 0.95em;
+                padding: 15px;
+                font-size: 1em;
             }
             .faq-item .content {
-                padding: 12px;
-                font-size: 0.9em;
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1em;
+            }
+            .youtube-video {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar .logo {
+                font-size: 1.5em;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            h2 {
+                font-size: 1.6em;
             }
         }
     </style>
@@ -162,175 +237,219 @@
 <body>
     <div class="navbar">
         <div class="logo">Evony TKR</div>
-        <!-- HIDE (NEED FIX) <a href="#">Home</a>
-        <a href="#faq">Rules</a>
-        <a href="#contact">Contact</a> -->
     </div>
     
-    <div class="container" id="faq">
-        <h1>1366 + 1402 Server Rules</h1>
-        <p>Read and Follow The Server Rules Provided Below!</p>
+    <div class="container">
+        <div class="overlay" id="faq">
+            <h1>1366 + 1402 <br>Server Rules</h1>
+            <p>Read and Follow The Server Rules Provided Below!</p>
+            
+            <div class="faq-item">
+            	<button>
+               	 RULES 1: Code Of Conduct
+            	</button>
+            	<div class="content">
+               	 <a>There must be a level of respect when commenting on World Chat. Friendly banter is okay, but attacks on a person’s race, nationality, and/or orientation are unacceptable. Slander towards an alliance, personal attacks (regardless if the statements are true, half-true, or elaborations), and unsubstantiated accusations will not be tolerated. Toxic behavior such as this will result in the member’s expulsion from their alliance for a two-week probationary period. If the behavior continues, the Server Council will convene regarding the behavior, then designate and enforce punishment. We should all work together to keep World Chat friendly and create a strong and united server that is enjoyable for everyone.</a>
+           	 </div>
+     	   </div>
         
-        <div class="faq-item">
-            <button>
-                RULES 1: Code Of Conduct
-            </button>
-            <div class="content">
-                <a>There must be a level of respect when commenting on World Chat. Friendly banter is okay, but attacks on a person’s race, nationality, and/or orientation are unacceptable. Slander towards an alliance, personal attacks (regardless if the statements are true, half-true, or elaborations), and unsubstantiated accusations will not be tolerated. Toxic behavior such as this will result in the member’s expulsion from their alliance for a two-week probationary period. If the behavior continues, the Server Council will convene regarding the behavior, then designate and enforce punishment. We should all work together to keep World Chat friendly and create a strong and united server that is enjoyable for everyone.</a>
+   	     <div class="faq-item">
+          	  <button>
+              	  RULES 2: NAP and Kill Event
+            	</button>
+          	  <div class="content">
+            	    <a>Server 1366 + 1402 is a permanent NAP (Non-Aggression Pact) server and therefore does NOT follow the Evony event calendar. The Monarch Competition KE (Kill Event) is not in effect.</a>
+            	    <li>Attacking and/or scouting any keep (castle) or subordinate city (sub) that belongs to a player in an alliance, or attacking/scouting any alliance city, is strictly prohibited. If a player desires this protection, they may join an alliance or spend 200 gems to create their own alliance. </li>
+              	  <li>If a player in an alliance is attacked, the attacker will either pay compensation or be declared KoS (Kill on Sight) by the Server Council through a mail sent by the ruling King/Queen. </li>
+             	   <li>If a player must expel their alt/farm from an alliance to plunder, the player must change the name of that alt/farm to prevent other players from attacking it. The name must contain the alliance acronym and the term mini, farm, rss, ore, wood, stone, food, etc. (Examples: SCCrss4Me, NFGMiniDel, PTOFarm1)</li>
+           	     <ul>
+                		<li>Any keep that is not in an alliance and does not have the name changed as above is vulnerable to attack. </li>
+					</ul>
+          	  </div>
+        	</div>
+        
+      	  <div class="faq-item">
+           	 <button>
+          	      RULES 3: Subordinate Cities
+           	 </button>
+          	  <div class="content">
+              	  <li>Player owned sub cities must NOT be stolen, regardless whether or not the owner belongs to an alliance. If a player leaves the server and does not give their sub cities away, the alliance is responsible for their distribution.</li>
+					<li>Do NOT attack an NPC sub city if a player is sitting next to it. The player may be leveling Generals or switching sub cities.</li>
+					<ul>
+						<li>It is almost impossible to cancel attacks if you are next to a target, so if Player1 attempts to take an NPC sub city while Player2 is in the process of leveling generals, Player1 will be responsible for compensation. Player1 will also need to give the sub back or risk becoming KoS.</li>
+					</ul>
+					<li>For the sake of proving ownership, it is beneficial to the player to take a screenshot of their keep next to the sub city before they release it. </li>
+					<li>R5/4s are responsible for kicking sub city thieves from the alliance for a two-week probationary period. If the player continues to steal sub cities and/or does not return the sub city to the rightful owner, they will become KoS.</li>
+					<li>KOS-players lose protection from all server rules. R5/4s are responsible for expelling and/or not accepting the KoS member. If an alliance harbors a KoS member for more than 12 hours, the entire alliance will become KoS. </li>
+					<b>SERVER SUBORDINATE CITIES</b>
+					<li>1366+1402 has multiple subordinate cities which have been donated to the server for general leveling. These sub cities belong to the server and are not to be taken by individual players. </li>
+					<li>If a player takes a server sub city, that player’s R5/4’s must be notified so they can reach out to  the player and have them release the sub. If the player does not release the sub city within 24hrs, the player will be considered KoS until they release said sub city.</li>
+           	 </div>
+    	    </div>
+        
+       	 <div class="faq-item">
+           	 <button>
+            	    RULES 4: Tiles, Relics, Pyramid and Barbs
+           	 </button>
+          	  <div class="content">
+             	   <a>Do NOT attack players in resource tiles, relics, pyramids, and/or barbarian castles; unless that player is KoS or it is during Purge (see Rule 6).</a>
+               	 <br>
+					<b>Barbarians: Do NOT attack Barbarian Castles occupied by an alliance. </b>
+					<ul>
+						<li>It is advisable to take a screenshot as soon as you start marching towards a Barb Castle as proof of “ownership.”</li>
+						<li>Attackers are obligated to pay compensation or risk going KoS.</li>
+					</ul>
+					<b>Pyramids: If you see a player marching to a pyramid, do NOT send a speed march or port next to it to try to claim it. </b>
+					<ul>
+						<li>Pyramid theft is responsible for multiple disputes, so it is advisable to take a screenshot as soon as you start marching towards the pyramid. </li>
+						<li>If someone steals your pyramid, inform your R5/4s and provide the screenshot as proof, allowing them to inform the thief’s alliance of the situation. Alliance leadership is responsible for reprimanding the pyramid thief. If pyramid theft becomes habitual, the issue will go to Server Council. </li>
+						<li>The penalty for attacking an occupied pyramid will be twice the compensation to the rightful pyramid owner.</li>
+					</ul>
+					<b>Relics: Relic theft is also a common problem. </b>
+					<ul>
+						<li>If another alliance attacks your relic and kills your troops, the attacker will pay compensation or become KoS.</li>
+						<li>If another alliance takes your relic and there are no casualties, send a mail to the person occupying the relic, as well as your and their R5/R4s. </li>
+						<li>If there is communication in less than 12 hours, the occupier can choose to leave the relic or open a new relic. No harm, no foul.</li>
+						<li>If there is no response within 12 hours, you may attack the relic.</li>
+					</ul>
+					<li>If your teammate steals a relic, which you unknowingly occupy, and the rightful owner attacks it, your teammate is responsible for your compensation.</li>
+            	</div>
+        	</div>
+        
+     	   <div class="faq-item">
+            	<button>
+               	 RULES 5: Conflict Resolution 
+          	  </button>
+          	  <div class="content">
+              	  <li>If a conflict arises regarding rule breaking, players must try to resolve their conflict at the lowest level possible (player to player). If they are not capable of doing so, the involved alliance’s R5/4s must intervene. If the R5/4s are unable to solve the issue, the Server Council will intervene.</li>
+					<li>“Revenge” is not an approved method of conflict resolution. If a player or their alliance reacts without going through Step 1, they will need to send compensation for the resulting damage or go KoS.</li>
+					<ul>
+						<li>Accidental hits are especially NOT a cause for retaliation.</li>
+					</ul>
+					<li>Examples of accidental hits include, but are not limited to, taking a NPC city when a player is sitting next to it, hitting one occupied resource tile, hitting one occupied pyramid or one barb castle during their respective events, etc.</li>
+					<li>If a player makes multiple prohibited attacks, it is malicious intent and the player will be KoS.</li>
+           	 </div>
+      	  </div>
+        
+        	<div class="faq-item">
+           	 <button>
+              	  RULES 6: SvS and Purge
+           	 </button>
+          	  <div class="content">
+					<b>Server versus Server War happens every two weeks. It starts at Friday midnight server time and lasts for 48 hours. </b>
+					<a>PURGE: To prevent giving points to the enemy server, a purge will start at 22:00 server time. Before the start of the purge, all players must have a truce shield (bubble) and recall all troops from relics, pyramids, resource tiles, camps, etc. (anywhere a player can get attacked). <b>THERE WILL BE NO SUB CITY STEALING DURING PURGE.</b></a>
+					<li>Anybody who is purging WILL add Purge to their Monarch name. (examples: <b>OdinPurge, PurgerDel, PurgeYou</b>)</li>
+					<ul>
+						<li>Players may NOT attack anyone with the Purge name format. Members without a bubble and without Purge in their name are vulnerable to attack.</li>
+					</ul>
+					<li>If a player has an emergency/ red evony and is unable to bubble, a green bubble and protection will be granted by high exception. This will be communicated in World Chat, on the server council discord, and with as many R4/5’s as possible so an alliance mail can be sent.</li>
+					<br>
+					<b>PURGERS:</b>
+					<li>Purgers may attack all occupied relics, resource tiles, pyramids, etc, after purge has started at 22.00h server time. </li>
+					<li>Castles may be purged from 23.00h server time. </li>
+					<li>Purgers MUST scout an unbubbled player before attacking. This warns the player to bubble if they are online, but also determines if there are troops to kill. </li>
+					<li>Purgeable keeps will not be reinforced from 23.00h server time on, unless they are protected to be green bubbled as per previous point. </li>
+					<li>If the Purger comes across an unbubbled keep that they are unable to attack/rally due to its size, they must inform their R5/4s and post the coordinates to World Chat: Someone will be able to help clear it.</li>
+					<li>In case of a wrongly purged keep, the Purger must compensate the victim and the reinforcer.</li>
+					<br>
+					<b>TIMELINE:</b>
+					<br>
+					<a><b>22.00 Server Time</b>: All Purgers will attack occupied resource tiles, pyramids, relics, camps, etc</a>
+					<br>
+					<a><b>23.00 Server Time</b>: All purgers will attack unbubbled keeps</a>
+					<br>
+					<a><b>00.00 Server Time</b>: SvS Starts</a>
+					<br>
+					<a><b>During SVS-War</b>: There will be a CONTINUOUS PURGE of the 1366 server.</a>
+					<br>
+					<br>
+					<a>Any player on the 1366 server who collects resources on the world map or occupies ruins, pyramids, or barbarian castles during SvS may have their resource tiles cleared so the opposing server cannot take easy points.</a>
+					<a>However, 1366 persons will not be purged on the enemy server as positive points can be accumulated strategically from participating in events on the enemy server.</a>
+					<a>Please note this will be subject to review if there is a significant impact on future SVS negative scores or SVS outcomes.</a>
+				</div>
+      	  </div>
+        
+       	 <div class="faq-item">
+          	  <button>
+               	 RULES 7: Server Queen/King and Throne List
+           	 </button>
+          	  <div class="content">
+                	<b>Players who have their Wonder 1 open will be eligible to be Queen or King of the server.</b>
+					<a>Each person will be Queen/King/Conqueror for two consecutive weeks to qualify for opening their Wonder 2. Conquering throne will be played by ear. Priority goes to players needing to open Wonder 2; however, in the event the enemy throne will be challenging to conquer, an older player can conquer to achieve their fame points. In the event the enemy throne will be almost impossible to conquer, there will be a throne truce. </a>
+					<ul>
+						<li><b>Throne truce will not be determined until the first day of SvS.</b></li>
+					</ul>
+					<a>It is preferable for players to have a positive score in SvS when they get their wings; however, up to 15% of the player’s score may be from negative points. If more than 15% of their score is negative points, they will drop to the bottom of the list for taking King/Queenship, even if they have Wonder 1 open.</a>
+          	  </div>
+      	  </div>
+            
+            <div class="image-container" id="sub_server">
+                <img src="subordinate_city_image.jpg" alt="Subordinate City">
+                <h2>Subordinate City Server</h2>
+                <p>Subordinate City Servers can be used to increase your general's level and please be careful not to take sub servers, please read RULE 3.</p>
+                <div class="coordinates">
+                    <p><strong>Location Coordinates:</strong> <br>X: 449, Y: 946<br> X : 1023 Y : 689</p>
+                </div>
+            </div>
+
+            <div class="server-time">
+                <p><strong>Server Time:</strong> <br> <span id="serverTime">Loading...</span></p>
+            </div>
+            
+            <div class="discord-container" id="discord">
+                <p>Join our Discord server to stay updated and participate in community discussions!</p>
+                <a href="https://discord.com/invite/T7T7sRQYTd" class="discord-button">Join Discord</a>
+            </div>
+            
+            <div class="youtube-feed" id="video">
+                <h2>Pinned Videos</h2>
+                <div class="youtube-video">
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/BdavDqqUojg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
-        
-        <div class="faq-item">
-            <button>
-                RULES 2: NAP and Kill Event
-            </button>
-            <div class="content">
-                <a>Server 1366 + 1402 is a permanent NAP (Non-Aggression Pact) server and therefore does NOT follow the Evony event calendar. The Monarch Competition KE (Kill Event) is not in effect.</a>
-                <li>Attacking and/or scouting any keep (castle) or subordinate city (sub) that belongs to a player in an alliance, or attacking/scouting any alliance city, is strictly prohibited. If a player desires this protection, they may join an alliance or spend 200 gems to create their own alliance. </li>
-                <li>If a player in an alliance is attacked, the attacker will either pay compensation or be declared KoS (Kill on Sight) by the Server Council through a mail sent by the ruling King/Queen. </li>
-                <li>If a player must expel their alt/farm from an alliance to plunder, the player must change the name of that alt/farm to prevent other players from attacking it. The name must contain the alliance acronym and the term mini, farm, rss, ore, wood, stone, food, etc. (Examples: SCCrss4Me, NFGMiniDel, PTOFarm1)</li>
-                <ul>
-                	<li>Any keep that is not in an alliance and does not have the name changed as above is vulnerable to attack. </li>
-				</ul>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button>
-                RULES 3: Subordinate Cities
-            </button>
-            <div class="content">
-                <li>Player owned sub cities must NOT be stolen, regardless whether or not the owner belongs to an alliance. If a player leaves the server and does not give their sub cities away, the alliance is responsible for their distribution.</li>
-				<li>Do NOT attack an NPC sub city if a player is sitting next to it. The player may be leveling Generals or switching sub cities.</li>
-				<ul>
-					<li>It is almost impossible to cancel attacks if you are next to a target, so if Player1 attempts to take an NPC sub city while Player2 is in the process of leveling generals, Player1 will be responsible for compensation. Player1 will also need to give the sub back or risk becoming KoS.</li>
-				</ul>
-				<li>For the sake of proving ownership, it is beneficial to the player to take a screenshot of their keep next to the sub city before they release it. </li>
-				<li>R5/4s are responsible for kicking sub city thieves from the alliance for a two-week probationary period. If the player continues to steal sub cities and/or does not return the sub city to the rightful owner, they will become KoS.</li>
-				<li>KOS-players lose protection from all server rules. R5/4s are responsible for expelling and/or not accepting the KoS member. If an alliance harbors a KoS member for more than 12 hours, the entire alliance will become KoS. </li>
-				<b>SERVER SUBORDINATE CITIES</b>
-				<li>1366+1402 has multiple subordinate cities which have been donated to the server for general leveling. These sub cities belong to the server and are not to be taken by individual players. </li>
-				<li>If a player takes a server sub city, that player’s R5/4’s must be notified so they can reach out to  the player and have them release the sub. If the player does not release the sub city within 24hrs, the player will be considered KoS until they release said sub city.</li>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button>
-                RULES 4: Tiles, Relics, Pyramid and Barbs
-            </button>
-            <div class="content">
-                <a>Do NOT attack players in resource tiles, relics, pyramids, and/or barbarian castles; unless that player is KoS or it is during Purge (see Rule 6).</a>
-                <br>
-				<b>Barbarians: Do NOT attack Barbarian Castles occupied by an alliance. </b>
-				<ul>
-					<li>It is advisable to take a screenshot as soon as you start marching towards a Barb Castle as proof of “ownership.”</li>
-					<li>Attackers are obligated to pay compensation or risk going KoS.</li>
-				</ul>
-				<b>Pyramids: If you see a player marching to a pyramid, do NOT send a speed march or port next to it to try to claim it. </b>
-				<ul>
-					<li>Pyramid theft is responsible for multiple disputes, so it is advisable to take a screenshot as soon as you start marching towards the pyramid. </li>
-					<li>If someone steals your pyramid, inform your R5/4s and provide the screenshot as proof, allowing them to inform the thief’s alliance of the situation. Alliance leadership is responsible for reprimanding the pyramid thief. If pyramid theft becomes habitual, the issue will go to Server Council. </li>
-					<li>The penalty for attacking an occupied pyramid will be twice the compensation to the rightful pyramid owner.</li>
-				</ul>
-				<b>Relics: Relic theft is also a common problem. </b>
-				<ul>
-					<li>If another alliance attacks your relic and kills your troops, the attacker will pay compensation or become KoS.</li>
-					<li>If another alliance takes your relic and there are no casualties, send a mail to the person occupying the relic, as well as your and their R5/R4s. </li>
-					<li>If there is communication in less than 12 hours, the occupier can choose to leave the relic or open a new relic. No harm, no foul.</li>
-					<li>If there is no response within 12 hours, you may attack the relic.</li>
-				</ul>
-				<li>If your teammate steals a relic, which you unknowingly occupy, and the rightful owner attacks it, your teammate is responsible for your compensation.</li>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button>
-                RULES 5: Conflict Resolution 
-            </button>
-            <div class="content">
-                <li>If a conflict arises regarding rule breaking, players must try to resolve their conflict at the lowest level possible (player to player). If they are not capable of doing so, the involved alliance’s R5/4s must intervene. If the R5/4s are unable to solve the issue, the Server Council will intervene.</li>
-				<li>“Revenge” is not an approved method of conflict resolution. If a player or their alliance reacts without going through Step 1, they will need to send compensation for the resulting damage or go KoS.</li>
-				<ul>
-					<li>Accidental hits are especially NOT a cause for retaliation.</li>
-				</ul>
-				<li>Examples of accidental hits include, but are not limited to, taking a NPC city when a player is sitting next to it, hitting one occupied resource tile, hitting one occupied pyramid or one barb castle during their respective events, etc.</li>
-				<li>If a player makes multiple prohibited attacks, it is malicious intent and the player will be KoS.</li>
-            </div>
-        </div>
-        
-        <div class="faq-item">
-            <button>
-                RULES 6: SvS and Purge
-            </button>
-            <div class="content">
-				<b>Server versus Server War happens every two weeks. It starts at Friday midnight server time and lasts for 48 hours. </b>
-				<a>PURGE: To prevent giving points to the enemy server, a purge will start at 22:00 server time. Before the start of the purge, all players must have a truce shield (bubble) and recall all troops from relics, pyramids, resource tiles, camps, etc. (anywhere a player can get attacked). <b>THERE WILL BE NO SUB CITY STEALING DURING PURGE.</b></a>
-				<li>Anybody who is purging WILL add Purge to their Monarch name. (examples: <b>OdinPurge, PurgerDel, PurgeYou</b>)</li>
-				<ul>
-					<li>Players may NOT attack anyone with the Purge name format. Members without a bubble and without Purge in their name are vulnerable to attack.</li>
-				</ul>
-				<li>If a player has an emergency/ red evony and is unable to bubble, a green bubble and protection will be granted by high exception. This will be communicated in World Chat, on the server council discord, and with as many R4/5’s as possible so an alliance mail can be sent.</li>
-				<br>
-				<b>PURGERS:</b>
-				<li>Purgers may attack all occupied relics, resource tiles, pyramids, etc, after purge has started at 22.00h server time. </li>
-				<li>Castles may be purged from 23.00h server time. </li>
-				<li>Purgers MUST scout an unbubbled player before attacking. This warns the player to bubble if they are online, but also determines if there are troops to kill. </li>
-				<li>Purgeable keeps will not be reinforced from 23.00h server time on, unless they are protected to be green bubbled as per previous point. </li>
-				<li>If the Purger comes across an unbubbled keep that they are unable to attack/rally due to its size, they must inform their R5/4s and post the coordinates to World Chat: Someone will be able to help clear it.</li>
-				<li>In case of a wrongly purged keep, the Purger must compensate the victim and the reinforcer.</li>
-				<br>
-				<b>TIMELINE:</b>
-				<br>
-				<a><b>22.00 Server Time</b>: All Purgers will attack occupied resource tiles, pyramids, relics, camps, etc</a>
-				<br>
-				<a><b>23.00 Server Time</b>: All purgers will attack unbubbled keeps</a>
-				<br>
-				<a><b>00.00 Server Time</b>: SvS Starts</a>
-				<br>
-				<a><b>During SVS-War</b>: There will be a CONTINUOUS PURGE of the 1366 server.</a>
-				<br>
-				<br>
-				<a>Any player on the 1366 server who collects resources on the world map or occupies ruins, pyramids, or barbarian castles during SvS may have their resource tiles cleared so the opposing server cannot take easy points.</a>
-				<a>However, 1366 persons will not be purged on the enemy server as positive points can be accumulated strategically from participating in events on the enemy server.</a>
-				<a>Please note this will be subject to review if there is a significant impact on future SVS negative scores or SVS outcomes.</a>
-			</div>
-        </div>
-        
-        <div class="faq-item">
-            <button>
-                RULES 7: Server Queen/King and Throne List
-            </button>
-            <div class="content">
-                <b>Players who have their Wonder 1 open will be eligible to be Queen or King of the server.</b>
-				<a>Each person will be Queen/King/Conqueror for two consecutive weeks to qualify for opening their Wonder 2. Conquering throne will be played by ear. Priority goes to players needing to open Wonder 2; however, in the event the enemy throne will be challenging to conquer, an older player can conquer to achieve their fame points. In the event the enemy throne will be almost impossible to conquer, there will be a throne truce. </a>
-				<ul>
-					<li><b>Throne truce will not be determined until the first day of SvS.</b></li>
-				</ul>
-				<a>It is preferable for players to have a positive score in SvS when they get their wings; however, up to 15% of the player’s score may be from negative points. If more than 15% of their score is negative points, they will drop to the bottom of the list for taking King/Queenship, even if they have Wonder 1 open.</a>
-            </div>
-        </div>
-        <p><i>* Updated date: August 9, 2024</i></p>
-        	
     </div>
-    <div id="contact" class="container">
-        <h1>Contact Us</h1>
-        <p>If you have further questions, please contact us via Discord Server: <a href="https://discord.com/invite/T7T7sRQYTd">1366+1402 Evony TKR</a></p>
-    </div>
+
     <footer>
-        <a>© 2024 Made By ❤ Server Council</a>
+        <p>&copy; Server Council. All rights reserved.</p>
+        <p><a href="#faq">Rules</a> | <a href="#discord">Discord Server</a></p>
+        <!---<p><a href="#sub_server">Subordinate City</a> | <a href="#video">Pinned Video</a></p>-->
     </footer>
+
     <script>
-        document.querySelectorAll('.faq-item button').forEach(button => {
+        const faqItems = document.querySelectorAll('.faq-item button');
+
+        faqItems.forEach(button => {
             button.addEventListener('click', () => {
-                button.classList.toggle('active');
-                let content = button.nextElementSibling;
-                if (button.classList.contains('active')) {
+                const content = button.nextElementSibling;
+                const isActive = content.style.display === 'block';
+                
+                // Close all contents
+                document.querySelectorAll('.faq-item .content').forEach(item => {
+                    item.style.display = 'none';
+                    item.previousElementSibling.classList.remove('active');
+                });
+
+                // Open clicked content
+                if (!isActive) {
                     content.style.display = 'block';
-                } else {
-                    content.style.display = 'none';
+                    button.classList.add('active');
                 }
             });
         });
+
+        function updateServerTime() {
+            const serverTimeElement = document.getElementById('serverTime');
+            const now = new Date();
+
+            const hours = String(now.getUTCHours()).padStart(2, '0');
+            const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+
+            serverTimeElement.textContent = `${hours}:${minutes}:${seconds} UTC`;
+        }
+
+        setInterval(updateServerTime, 1000);
     </script>
 </body>
 </html>
