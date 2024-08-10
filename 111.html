@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--- Themes by g4rzk (Angga Kurniawan) --->
 
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Evony TKR - Server Rules">
@@ -23,12 +23,16 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            color: #ffffff;
-            background-color: #007BFF; /* Warna latar belakang biru */
+            color: #333333;
+            background-color: #f5f5f5; /* Warna latar belakang abu-abu terang */
             transition: background-color 0.3s, color 0.3s;
         }
+        body.dark-mode {
+            background-color: #121212; /* Warna latar belakang gelap */
+            color: #f5f5f5; /* Warna teks terang */
+        }
         .overlay {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: #ffffff; /* Warna latar belakang abu-abu terang */
             padding: 50px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -36,11 +40,14 @@
             margin: 50px auto;
             transition: background-color 0.3s;
         }
+        body.dark-mode .overlay {
+            background-color: #1f1f1f; /* Warna latar belakang abu-abu gelap */
+        }
         .navbar {
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #0056b3; /* Warna latar belakang navbar biru */
+            background-color: #333333; /* Warna latar belakang navbar abu-abu gelap */
             padding: 15px 20px;
             color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -60,10 +67,13 @@
         }
         h1 {
             text-align: center;
-            color: #0056b3; /* Warna teks */
+            color: #333333; /* Warna teks abu-abu gelap */
             font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 20px;
+        }
+        body.dark-mode h1 {
+            color: #f5f5f5;
         }
         p {
             text-align: center;
@@ -74,9 +84,12 @@
             margin: 15px 0;
             border-bottom: 1px solid #cccccc;
         }
+        body.dark-mode .faq-item {
+            border-bottom: 1px solid #555555;
+        }
         .faq-item button {
             width: 100%;
-            background-color: #007BFF; /* Warna latar belakang tombol FAQ */
+            background-color: #333333; /* Warna latar belakang tombol FAQ abu-abu gelap */
             border: none;
             padding: 20px;
             text-align: left;
@@ -89,7 +102,7 @@
             color: #ffffff; /* Warna teks */
         }
         .faq-item button:hover {
-            background-color: #0056b3; /* Warna hover */
+            background-color: #555555; /* Warna hover */
             color: #ffffff;
         }
         .faq-item button:after {
@@ -103,7 +116,7 @@
         .faq-item .content {
             display: none;
             padding: 20px;
-            background-color: #0056b3;
+            background-color: #555555; /* Warna konten FAQ abu-abu gelap */
             border-left: 4px solid #cccccc;
             font-size: 1em;
             color: #ffffff;
@@ -127,11 +140,17 @@
             color: #333333; /* Warna teks */
             margin-top: 10px;
         }
+        body.dark-mode .image-container p {
+            color: #f5f5f5;
+        }
         .coordinates {
             font-size: 1.1em;
             color: #333333;
             margin-top: 10px;
             text-align: center;
+        }
+        body.dark-mode .coordinates {
+            color: #f5f5f5;
         }
         .discord-container {
             text-align: center;
@@ -159,6 +178,9 @@
             color: #333333;
             margin: 20px 0;
         }
+        body.dark-mode .server-time {
+            color: #f5f5f5;
+        }
         .youtube-feed {
             text-align: center;
             margin: 50px 0;
@@ -172,11 +194,11 @@
         footer {
             text-align: center;
             padding: 25px;
-            background-color: #0056b3; /* Warna latar belakang footer biru */
+            background-color: #333333; /* Warna latar belakang footer abu-abu gelap */
             margin-top: 30px;
             color: #ffffff;
             font-size: 0.9em;
-            border-top: 3px solid #007BFF;
+            border-top: 3px solid #555555;
         }
         footer a {
             color: #ffffff;
@@ -192,14 +214,14 @@
             font-size: 1.5em;
             padding: 10px;
             color: #ffffff;
-            background-color: #007BFF;
-            border: 2px solid #0056b3;
+            background-color: #555555;
+            border: 2px solid #333333;
             border-radius: 20px;
             transition: background-color 0.3s ease, color 0.3s ease;
             outline: none;
         }
         .toggle-switch:hover {
-            background-color: #0056b3;
+            background-color: #333333;
             color: #ffffff;
         }
         @media (max-width: 768px) {
@@ -238,28 +260,28 @@
 
 <body>
     <div class="navbar">
-        <div class="logo">
-            Evony TKR
-        </div>
+        <div class="logo">1366 + 1402 Rules</div>
     </div>
-    
-    <div class="container">
-        <div class="overlay" id="faq">
-            <h1>1366 + 1402 Server Rules</h1>
-            <p>Read and Follow The Server Rules Provided Below!</p>
-            
+
+    <div class="overlay">
+        <div class="container">
+            <h1>Server Rules</h1>
+            <p>These are the server rules for 1366 + 1402.</p>
+
             <div class="faq-item">
                 <button>
-                    RULES 1: Code Of Conduct
+                    RULES 1: NAP (Non-Aggression Pact)
                 </button>
                 <div class="content">
-                    <a>There must be a level of respect when commenting on World Chat. Friendly banter is okay, but attacks on a person’s race, nationality, and/or orientation are unacceptable. Slander towards an alliance, personal attacks (regardless if the statements are true, half-true, or elaborations), and unsubstantiated accusations will not be tolerated.</a>
+                    <a>Server-wide Non-Aggression Pact (NAP) must be respected by all players.</a>
+                    <li>Players may not attack others unless in the wilderness or during designated kill events.</li>
+                    <li>Violating NAP will result in penalties decided by the Server Council.</li>
                 </div>
             </div>
             
             <div class="faq-item">
                 <button>
-                    RULES 2: Kill On Sight (KoS)
+                    RULES 2: KoS (Kill on Sight)
                 </button>
                 <div class="content">
                     <a>Server will designate players with a KoS (Kill on Sight) designation. If a player from one alliance attacks/scouts another alliance member, the attacking player will be declared KoS (Kill on Sight) immediately. If a player without an alliance attacks/scouts a player in an alliance, the attacking player will be messaged to stop immediately. If this behavior continues, the player will be declared KoS.</a>
@@ -381,8 +403,8 @@
         // Translator Function
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
-                pageLanguage: 'en', // Bahasa default
-                includedLanguages: 'id,es,fr,de,ja,zh-CN,zh-TW', // Bahasa yang didukung
+                pageLanguage: 'id', // Bahasa default
+                includedLanguages: 'en,es,fr,de,ja,zh-CN,zh-TW', // Bahasa yang didukung
                 layout: google.translate.TranslateElement.InlineLayout.SIMPLE
             }, 'google_translate_element');
         }
