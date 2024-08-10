@@ -45,7 +45,7 @@
         }
         .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             background-color: #333333; /* Warna latar belakang navbar abu-abu gelap */
             padding: 15px 20px;
@@ -60,6 +60,25 @@
             font-weight: 600;
             display: flex;
             align-items: center;
+        }
+        .navbar .language-selector {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .language-selector select {
+            font-size: 1em;
+            padding: 5px 10px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #333333;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark-mode .navbar .language-selector select {
+            background-color: #555555;
+            color: #f5f5f5;
         }
         .container {
             background-color: transparent;
@@ -81,17 +100,17 @@
             margin-bottom: 20px;
         }
         .faq-item {
-            margin: 15px 0;
-            border-bottom: 1px solid #cccccc;
+            margin: 30px 0; /* Tambahkan jarak antara item FAQ */
+            border-bottom: none;
         }
         body.dark-mode .faq-item {
-            border-bottom: 1px solid #555555;
+            border-bottom: none;
         }
         .faq-item button {
             width: 100%;
             background-color: #333333; /* Warna latar belakang tombol FAQ abu-abu gelap */
             border: none;
-            padding: 20px;
+            padding: 15px 20px; /* Mengurangi padding untuk tampilan lebih minimalis */
             text-align: left;
             font-size: 1.1em;
             cursor: pointer;
@@ -100,6 +119,7 @@
             align-items: center;
             font-weight: 600;
             color: #ffffff; /* Warna teks */
+            border-radius: 5px; /* Membuat sudut tombol melengkung */
         }
         .faq-item button:hover {
             background-color: #555555; /* Warna hover */
@@ -115,7 +135,7 @@
         }
         .faq-item .content {
             display: none;
-            padding: 20px;
+            padding: 15px 20px; /* Mengurangi padding untuk tampilan lebih minimalis */
             background-color: #555555; /* Warna konten FAQ abu-abu gelap */
             border-left: 4px solid #cccccc;
             font-size: 1em;
@@ -123,6 +143,8 @@
             font-weight: 400;
             text-align: left;
             line-height: 1.6;
+            border-radius: 5px; /* Membuat sudut konten melengkung */
+            margin-top: 10px; /* Memberikan jarak antara tombol dan konten */
         }
         .image-container {
             text-align: center;
@@ -217,50 +239,32 @@
             background-color: #555555;
             border: 2px solid #333333;
             border-radius: 20px;
+            margin-top: 10px;
             transition: background-color 0.3s ease, color 0.3s ease;
-            outline: none;
         }
-        .toggle-switch:hover {
-            background-color: #333333;
-            color: #ffffff;
-        }
-        @media (max-width: 768px) {
-            .overlay {
-                padding: 20px;
-            }
-            .faq-item button {
-                padding: 15px;
-                font-size: 1em;
-            }
-            .faq-item .content {
-                padding: 15px;
-                font-size: 0.95em;
-            }
-            h1 {
-                font-size: 2em;
-            }
-            .youtube-video {
-                width: 100%;
-            }
-        }
-        @media (max-width: 480px) {
-            .navbar {
-                flex-direction: column;
-                text-align: center;
-            }
-            .navbar .logo {
-                font-size: 1.5em;
-            }
-            h1 {
-                font-size: 1.75em;
-            }
+        body.dark-mode .toggle-switch {
+            background-color: #dddddd;
+            color: #333333;
         }
     </style>
 </head>
 
 <body>
     <div class="navbar">
-        <div class="logo">1366 + 1402 Rules</div>
+        <div class="logo">EvonyTKR</div>
+        
+        <!-- Kolom Pilihan Bahasa -->
+        <div class="language-selector">
+            <select id="language-select" onchange="translatePage()">
+                <option value="id">Bahasa Indonesia</option>
+                <option value="en">English</option>
+                <option value="es">Español</option>
+                <option value="zh-CN">中文 (Simplified)</option>
+                <option value="tr">Türkçe</option>
+                <option value="ko">한국어</option>
+                <option value="pt">Português</option>
+            </select>
+        </div>
     </div>
 
     <div class="overlay">
@@ -269,55 +273,53 @@
             <p>These are the server rules for 1366 + 1402.</p>
 
             <div class="faq-item">
-                <button>
-                    RULES 1: NAP (Non-Aggression Pact)
-                </button>
+                <button>RULES 1: NAP (Non-Aggression Pact)</button>
                 <div class="content">
-                    <a>Server-wide Non-Aggression Pact (NAP) must be respected by all players.</a>
-                    <li>Players may not attack others unless in the wilderness or during designated kill events.</li>
-                    <li>Violating NAP will result in penalties decided by the Server Council.</li>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <button>
-                    RULES 2: KoS (Kill on Sight)
-                </button>
-                <div class="content">
-                    <a>Server will designate players with a KoS (Kill on Sight) designation. If a player from one alliance attacks/scouts another alliance member, the attacking player will be declared KoS (Kill on Sight) immediately. If a player without an alliance attacks/scouts a player in an alliance, the attacking player will be messaged to stop immediately. If this behavior continues, the player will be declared KoS.</a>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <button>
-                    RULES 3: Subordinate Cities
-                </button>
-                <div class="content">
-                    <a>Subordinate cities are always protected under the NAP.</a>
-                    <li>For a player to keep a newly released subordinate city, it must be either unlocked or moved to within 20 minutes.</li>
-                    <li>Once unlocked, it cannot be attacked. If the sub is locked after the first 20 minutes, the sub can be taken by the first player who can break the lock.</li>
-                    <li>If a player accidentally captures a sub belonging to another player, the sub must be released immediately. The captor will not be attacked unless the sub is not released within a timely manner.</li>
-                    <li>If a player is zeroed, their subs can be captured. They must be released once the player is out of bubble and online. If the subs are not released in a timely manner, the Server Council will convene regarding the behavior, then designate and enforce punishment.</li>
-                </div>
-            </div>
-            
-            <div class="faq-item">
-                <button>
-                    RULES 4: Punishment
-                </button>
-                <div class="content">
-                    <a>Server Council will make and enforce server rules and designate punishment for players who break server rules. The ruling King/Queen is the highest authority and has the final say in all Server Council decisions. The Server Council consists of R5s from top alliances.</a>
-                    <li>KoS status means that the player is free to be attacked at any time without consequence.</li>
-                    <li>Players who help a KoS player will also be declared KoS.</li>
-                    <li>KoS status will remain in effect until the ruling King/Queen determines otherwise.</li>
+                    <p>Server-wide Non-Aggression Pact (NAP) must be respected by all players.</p>
                     <ul>
-                        <li>If a KoS player is in an alliance, the alliance R5 will be given 24 hours to expel them. If the player is not removed from the alliance, the entire alliance will become KoS.</li>
-                        <li>The Server Council will vote monthly regarding KoS status.</li>
-                        <li>The ruling King/Queen will send out the final verdict.</li>
+                        <li>Players may not attack others unless in the wilderness or during designated kill events.</li>
+                        <li>Violating NAP will result in penalties decided by the Server Council.</li>
                     </ul>
                 </div>
             </div>
-            
+
+            <div class="faq-item">
+                <button>RULES 2: KoS (Kill on Sight)</button>
+                <div class="content">
+                    <p>Server will designate players with a KoS (Kill on Sight) designation. If a player from one alliance attacks/scouts another alliance member, the attacking player will be declared KoS (Kill on Sight) immediately. If a player without an alliance attacks/scouts a player in an alliance, the attacking player will be messaged to stop immediately. If this behavior continues, the player will be declared KoS.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button>RULES 3: Subordinate Cities</button>
+                <div class="content">
+                    <p>Subordinate cities are always protected under the NAP.</p>
+                    <ul>
+                        <li>For a player to keep a newly released subordinate city, it must be either unlocked or moved to within 20 minutes.</li>
+                        <li>Once unlocked, it cannot be attacked. If the sub is locked after the first 20 minutes, the sub can be taken by the first player who can break the lock.</li>
+                        <li>If a player accidentally captures a sub belonging to another player, the sub must be released immediately. The captor will not be attacked unless the sub is not released within a timely manner.</li>
+                        <li>If a player is zeroed, their subs can be captured. They must be released once the player is out of bubble and online. If the subs are not released in a timely manner, the Server Council will convene regarding the behavior, then designate and enforce punishment.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button>RULES 4: Punishment</button>
+                <div class="content">
+                    <p>Server Council will make and enforce server rules and designate punishment for players who break server rules. The ruling King/Queen is the highest authority and has the final say in all Server Council decisions. The Server Council consists of R5s from top alliances.</p>
+                    <ul>
+                        <li>KoS status means that the player is free to be attacked at any time without consequence.</li>
+                        <li>Players who help a KoS player will also be declared KoS.</li>
+                        <li>KoS status will remain in effect until the ruling King/Queen determines otherwise.</li>
+                        <ul>
+                            <li>If a KoS player is in an alliance, the alliance R5 will be given 24 hours to expel them. If the player is not removed from the alliance, the entire alliance will become KoS.</li>
+                            <li>The Server Council will vote monthly regarding KoS status.</li>
+                            <li>The ruling King/Queen will send out the final verdict.</li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+
             <div class="image-container">
                 <img src="subordinate_city_image.jpg" alt="Subordinate City">
                 <p>Subordinate cities are vital assets in Evony TKR. They provide numerous benefits including troop training boosts, resource production, and additional buffs during combat. Protect your subs and follow server rules to ensure a harmonious community.</p>
@@ -329,12 +331,12 @@
             <div class="server-time">
                 <p><strong>Server Time:</strong> <span id="serverTime">Loading...</span></p>
             </div>
-            
+
             <div class="discord-container">
                 <p>Join our Discord server to stay updated and participate in community discussions!</p>
                 <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" class="discord-button">Join Discord</a>
             </div>
-            
+
             <div class="youtube-feed">
                 <h2>Latest Videos</h2>
                 <div class="youtube-video">
@@ -360,14 +362,14 @@
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
                 const isActive = content.style.display === 'block';
-                
-                // Close all contents
+
+                // Tutup semua konten
                 document.querySelectorAll('.faq-item .content').forEach(item => {
                     item.style.display = 'none';
                     item.previousElementSibling.classList.remove('active');
                 });
 
-                // Open clicked content
+                // Buka konten yang diklik
                 if (!isActive) {
                     content.style.display = 'block';
                     button.classList.add('active');
@@ -400,24 +402,13 @@
             }
         }
 
-        // Translator Function
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'id', // Bahasa default
-                includedLanguages: 'en,es,fr,de,ja,zh-CN,zh-TW', // Bahasa yang didukung
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
+        // Function to translate page based on selected language
+        function translatePage() {
+            const language = document.getElementById('language-select').value;
+            const url = window.location.href;
+            const translateUrl = `https://translate.google.com/translate?hl=${language}&sl=auto&tl=${language}&u=${url}`;
+            window.location.href = translateUrl;
         }
-
-        // Load Google Translate Script
-        (function() {
-            var gt = document.createElement('script');
-            gt.type = 'text/javascript';
-            gt.async = true;
-            gt.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(gt, s);
-        })();
     </script>
 </body>
 </html>
