@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--- Themes by g4rzk (Angga Kurniawan) --->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Evony TKR - Server Rules">
+    <meta name="keywords" content="1366 server rules evony">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="1366 Server Rules">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="author" content="g4rzk">
+
+    <title>1366 + 1402 Rules - Evony TKR</title>
+    <link rel="icon" type="image/x-icon" href="./Evony.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+            background-color: #007BFF; /* Warna latar belakang biru */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
+            margin: 50px auto;
+            transition: background-color 0.3s;
+        }
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0056b3; /* Warna latar belakang navbar biru */
+            padding: 15px 20px;
+            color: #ffffff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .logo {
+            font-size: 1.75em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .container {
+            background-color: transparent;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            color: #0056b3; /* Warna teks */
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+        .faq-item {
+            margin: 15px 0;
+            border-bottom: 1px solid #cccccc;
+        }
+        .faq-item button {
+            width: 100%;
+            background-color: #007BFF; /* Warna latar belakang tombol FAQ */
+            border: none;
+            padding: 20px;
+            text-align: left;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #ffffff; /* Warna teks */
+        }
+        .faq-item button:hover {
+            background-color: #0056b3; /* Warna hover */
+            color: #ffffff;
+        }
+        .faq-item button:after {
+            content: '⧩';
+            margin-left: auto;
+            transition: transform 0.5s ease;
+        }
+        .faq-item button.active:after {
+            transform: rotate(180deg);
+        }
+        .faq-item .content {
+            display: none;
+            padding: 20px;
+            background-color: #0056b3;
+            border-left: 4px solid #cccccc;
+            font-size: 1em;
+            color: #ffffff;
+            font-weight: 400;
+            text-align: left;
+            line-height: 1.6;
+        }
+        .image-container {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .image-container p {
+            font-size: 1.2em;
+            color: #333333; /* Warna teks */
+            margin-top: 10px;
+        }
+        .coordinates {
+            font-size: 1.1em;
+            color: #333333;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .discord-container {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .discord-button {
+            background-color: #7289da;
+            color: #ffffff;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+        }
+        .discord-button:hover {
+            background-color: #5a6fb3;
+        }
+        .server-time {
+            text-align: center;
+            font-size: 1.2em;
+            color: #333333;
+            margin: 20px 0;
+        }
+        .youtube-feed {
+            text-align: center;
+            margin: 50px 0;
+        }
+        .youtube-video {
+            display: inline-block;
+            width: 100%;
+            max-width: 300px; /* Ukuran video lebih kecil */
+            margin-bottom: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 25px;
+            background-color: #0056b3; /* Warna latar belakang footer biru */
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 0.9em;
+            border-top: 3px solid #007BFF;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #cccccc;
+        }
+        .toggle-switch {
+            cursor: pointer;
+            font-size: 1.5em;
+            padding: 10px;
+            color: #ffffff;
+            background-color: #007BFF;
+            border: 2px solid #0056b3;
+            border-radius: 20px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            outline: none;
+        }
+        .toggle-switch:hover {
+            background-color: #0056b3;
+            color: #ffffff;
+        }
+        @media (max-width: 768px) {
+            .overlay {
+                padding: 20px;
+            }
+            .faq-item button {
+                padding: 15px;
+                font-size: 1em;
+            }
+            .faq-item .content {
+                padding: 15px;
+                font-size: 0.95em;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .youtube-video {
+                width: 100%;
+            }
+        }
+        @media (max-width: 480px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+            .navbar .logo {
+                font-size: 1.5em;
+            }
+            h1 {
+                font-size: 1.75em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            Evony TKR
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="overlay" id="faq">
+            <h1>1366 + 1402 Server Rules</h1>
+            <p>Read and Follow The Server Rules Provided Below!</p>
+            
+            <div class="faq-item">
+                <button>
+                    RULES 1: Code Of Conduct
+                </button>
+                <div class="content">
+                    <a>There must be a level of respect when commenting on World Chat. Friendly banter is okay, but attacks on a person’s race, nationality, and/or orientation are unacceptable. Slander towards an alliance, personal attacks (regardless if the statements are true, half-true, or elaborations), and unsubstantiated accusations will not be tolerated.</a>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button>
+                    RULES 2: Kill On Sight (KoS)
+                </button>
+                <div class="content">
+                    <a>Server will designate players with a KoS (Kill on Sight) designation. If a player from one alliance attacks/scouts another alliance member, the attacking player will be declared KoS (Kill on Sight) immediately. If a player without an alliance attacks/scouts a player in an alliance, the attacking player will be messaged to stop immediately. If this behavior continues, the player will be declared KoS.</a>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button>
+                    RULES 3: Subordinate Cities
+                </button>
+                <div class="content">
+                    <a>Subordinate cities are always protected under the NAP.</a>
+                    <li>For a player to keep a newly released subordinate city, it must be either unlocked or moved to within 20 minutes.</li>
+                    <li>Once unlocked, it cannot be attacked. If the sub is locked after the first 20 minutes, the sub can be taken by the first player who can break the lock.</li>
+                    <li>If a player accidentally captures a sub belonging to another player, the sub must be released immediately. The captor will not be attacked unless the sub is not released within a timely manner.</li>
+                    <li>If a player is zeroed, their subs can be captured. They must be released once the player is out of bubble and online. If the subs are not released in a timely manner, the Server Council will convene regarding the behavior, then designate and enforce punishment.</li>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <button>
+                    RULES 4: Punishment
+                </button>
+                <div class="content">
+                    <a>Server Council will make and enforce server rules and designate punishment for players who break server rules. The ruling King/Queen is the highest authority and has the final say in all Server Council decisions. The Server Council consists of R5s from top alliances.</a>
+                    <li>KoS status means that the player is free to be attacked at any time without consequence.</li>
+                    <li>Players who help a KoS player will also be declared KoS.</li>
+                    <li>KoS status will remain in effect until the ruling King/Queen determines otherwise.</li>
+                    <ul>
+                        <li>If a KoS player is in an alliance, the alliance R5 will be given 24 hours to expel them. If the player is not removed from the alliance, the entire alliance will become KoS.</li>
+                        <li>The Server Council will vote monthly regarding KoS status.</li>
+                        <li>The ruling King/Queen will send out the final verdict.</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="image-container">
+                <img src="subordinate_city_image.jpg" alt="Subordinate City">
+                <p>Subordinate cities are vital assets in Evony TKR. They provide numerous benefits including troop training boosts, resource production, and additional buffs during combat. Protect your subs and follow server rules to ensure a harmonious community.</p>
+                <div class="coordinates">
+                    <p><strong>Location Coordinates:</strong> X: 1234, Y: 5678</p>
+                </div>
+            </div>
+
+            <div class="server-time">
+                <p><strong>Server Time:</strong> <span id="serverTime">Loading...</span></p>
+            </div>
+            
+            <div class="discord-container">
+                <p>Join our Discord server to stay updated and participate in community discussions!</p>
+                <a href="https://discord.gg/YOUR_DISCORD_INVITE_LINK" class="discord-button">Join Discord</a>
+            </div>
+            
+            <div class="youtube-feed">
+                <h2>Latest Videos</h2>
+                <div class="youtube-video">
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/BdavDqqUojg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 1366 Server Council. All rights reserved.</p>
+        <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        <!-- Dark Mode Toggle Button -->
+        <button class="toggle-switch" onclick="toggleDarkMode()">
+            <i id="mode-icon" class="fas fa-moon"></i>
+        </button>
+    </footer>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item button');
+
+        faqItems.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const isActive = content.style.display === 'block';
+                
+                // Close all contents
+                document.querySelectorAll('.faq-item .content').forEach(item => {
+                    item.style.display = 'none';
+                    item.previousElementSibling.classList.remove('active');
+                });
+
+                // Open clicked content
+                if (!isActive) {
+                    content.style.display = 'block';
+                    button.classList.add('active');
+                }
+            });
+        });
+
+        function updateServerTime() {
+            const serverTimeElement = document.getElementById('serverTime');
+            const now = new Date();
+
+            const hours = String(now.getUTCHours()).padStart(2, '0');
+            const minutes = String(now.getUTCMinutes()).padStart(2, '0');
+            const seconds = String(now.getUTCSeconds()).padStart(2, '0');
+
+            serverTimeElement.textContent = `${hours}:${minutes}:${seconds} UTC`;
+        }
+
+        setInterval(updateServerTime, 1000);
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const modeIcon = document.getElementById('mode-icon');
+
+            if (document.body.classList.contains('dark-mode')) {
+                modeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                modeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        // Translator Function
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en', // Bahasa default
+                includedLanguages: 'id,es,fr,de,ja,zh-CN,zh-TW', // Bahasa yang didukung
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+
+        // Load Google Translate Script
+        (function() {
+            var gt = document.createElement('script');
+            gt.type = 'text/javascript';
+            gt.async = true;
+            gt.src = '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(gt, s);
+        })();
+    </script>
+</body>
+</html>
