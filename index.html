@@ -17,33 +17,38 @@
     <title>1366 + 1402 Rules - Evony TKR</title>
     <link rel="icon" type="image/x-icon" href="./Evony.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            <!--- need fixed! 
-            background-image: url('evony_wallpaper.jpg'); /* Background wallpaper baru */
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed; 
-            ---->
-            background-color: #f0f2f5;
             margin: 0;
-            padding: 0; 
+            padding: 0;
             color: #333333;
+            background-color: #f5f5f5; /* Warna latar belakang abu-abu terang */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #121212; /* Warna latar belakang gelap */
+            color: #f5f5f5; /* Warna teks terang */
         }
         .overlay {
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: #ffffff; /* Warna latar belakang abu-abu terang */
             padding: 50px;
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 900px;
             margin: 50px auto;
+            transition: background-color 0.3s;
+        }
+        body.dark-mode .overlay {
+            background-color: #1f1f1f; /* Warna latar belakang abu-abu gelap */
         }
         .navbar {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            background-color: #00796b;
+            background-color: #333333; /* Warna latar belakang navbar abu-abu gelap */
             padding: 15px 20px;
             color: #ffffff;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -54,6 +59,12 @@
         .navbar .logo {
             font-size: 1.75em;
             font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .container {
+            background-color: transparent;
+            padding: 0;
         }
         .container {
             background-color: transparent;
@@ -61,17 +72,23 @@
         }
         h1 {
             text-align: center;
-            color: #004d40;
+            color: #333333; /* Warna teks abu-abu gelap */
             font-size: 2.5em;
             font-weight: 700;
             margin-bottom: 20px;
         }
         h2 {
             text-align: center;
-            color: #004d40;
-            font-size: 1.5em;
+            color: #333333; /* Warna teks abu-abu gelap */
+            font-size: 2em;
             font-weight: 700;
             margin-bottom: 20px;
+        }
+        body.dark-mode h1 {
+            color: #f5f5f5;
+        }
+        body.dark-mode h2 {
+            color: #f5f5f5;
         }
         p {
             text-align: center;
@@ -87,7 +104,7 @@
         }
         .faq-item button {
             width: 100%;
-            background-color: #e0f2f1;
+            background-color: #333333;
             border: none;
             padding: 20px;
             text-align: left;
@@ -97,11 +114,11 @@
             display: flex;
             align-items: center;
             font-weight: 600;
-            color: #004d40;
+            color: #ffffff;
         }
         .faq-item button:hover {
-            background-color: #b2dfdb;
-            color: #004d40;
+            background-color: #555555;
+            color: #ffffff;
         }
         .faq-item button:after {
             content: '⧩';
@@ -114,10 +131,10 @@
         .faq-item .content {
             display: none;
             padding: 20px;
-            background-color: #f1f1f1;
-            border-left: 4px solid #00796b;
+            background-color: #555555;
+            border-left: 4px solid #cccccc;
             font-size: 1em;
-            color: #333333;
+            color: #ffffff;
             font-weight: 400;
             text-align: left;
             line-height: 1.6;
@@ -135,14 +152,20 @@
         }
         .image-container p {
             font-size: 1em;
-            <!--color: #004d40;-->
+            color: #333333;
             margin-top: 10px;
+        }
+        body.dark-mode .image-container p {
+            color: #f5f5f5;
         }
         .coordinates {
             font-size: 1.1em;
             color: #333333;
             margin-top: 10px;
             text-align: center;
+        }
+        body.dark-mode .coordinates {
+            color: #f5f5f5;
         }
         .discord-container {
             text-align: center;
@@ -180,23 +203,42 @@
             max-width: 300px; /* Ukuran video lebih kecil */
             margin-bottom: 20px;
         }
+        body.dark-mode .server-time {
+            color: #f5f5f5;
+        }
+        
         footer {
             text-align: center;
             padding: 25px;
-            background-color: #00796b;
+            background-color: #333333; /* Warna latar belakang footer abu-abu gelap */
             margin-top: 30px;
             color: #ffffff;
             font-size: 0.9em;
-            border-top: 3px solid #004d40;
+            border-top: 3px solid #555555;
         }
         footer a {
-            color: #b2dfdb;
+            color: #ffffff;
             text-decoration: none;
             margin: 0 10px;
             transition: color 0.3s ease;
         }
         footer a:hover {
+            color: #cccccc;
+        }
+        .toggle-switch {
+            cursor: pointer;
+            font-size: 1.5em;
+            padding: 10px;
             color: #ffffff;
+            background-color: #555555;
+            border: 2px solid #333333;
+            border-radius: 20px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        body.dark-mode .toggle-switch {
+            background-color: #dddddd;
+            color: #333333;
         }
         @media (max-width: 768px) {
             .overlay {
@@ -243,7 +285,7 @@
         <div class="logo">Evony TKR</div>
     </div>
     
-    <div class="container">
+    <div class="container" id="backtoTop">
         <div class="overlay" id="faq">
             <h1>1366 + 1402 <br>Server Rules</h1>
             <p>Read and Follow The Server Rules Provided Below!</p>
@@ -423,9 +465,11 @@
     </div>
 
     <footer>
-        <p>&copy; Server Council. All rights reserved.</p>
-        <p><a href="#faq">Rules Server</a> | <a href="#discord">Discord Server</a></p>
-        <!---<p><a href="#sub_server">Subordinate City</a> | <a href="#video">Pinned Video</a></p>-->
+        <p>Made by ❤ Server Council</p>
+        <p><a href="#faq">Rules Server</a><a href="#backtoTop">Back to Top</a></p>
+        <button class="toggle-switch" onclick="toggleDarkMode()">
+            <i id="mode-icon" class="fas fa-moon"></i>
+        </button>
     </footer>
 
     <script>
@@ -435,14 +479,14 @@
             button.addEventListener('click', () => {
                 const content = button.nextElementSibling;
                 const isActive = content.style.display === 'block';
-                
-                // Close all contents
+
+                // Tutup semua konten
                 document.querySelectorAll('.faq-item .content').forEach(item => {
                     item.style.display = 'none';
                     item.previousElementSibling.classList.remove('active');
                 });
 
-                // Open clicked content
+                // Buka konten yang diklik
                 if (!isActive) {
                     content.style.display = 'block';
                     button.classList.add('active');
@@ -462,6 +506,26 @@
         }
 
         setInterval(updateServerTime, 1000);
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            const modeIcon = document.getElementById('mode-icon');
+
+            if (document.body.classList.contains('dark-mode')) {
+                modeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                modeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        // Function to translate page based on selected language
+        function translatePage() {
+            const language = document.getElementById('language-select').value;
+            const url = window.location.href;
+            const translateUrl = `https://translate.google.com/translate?hl=${language}&sl=auto&tl=${language}&u=${url}`;
+            window.location.href = translateUrl;
+        }
     </script>
 </body>
 </html>
