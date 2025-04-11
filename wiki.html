@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1366 + 1402 Evony - The Kings Return</title>
+	
+	<meta name="author" content="Angga Kurniawan (@g4rzk)">
+	<meta name="keywords" content="1366 Evony, Evony">
+	<meta name="description" content="Join hundreds of players on server 1366+1402 with the best strategy. Build your keep, forge alliances, player vs player and conquer the throne.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+	<link rel="shortcut icon" href="https://www.evony.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional inline animations */
+        .wiki-hero h1 {
+            animation: textGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes textGlow {
+            from { text-shadow: 0 0 5px rgba(255,255,255,0.3); }
+            to { text-shadow: 0 0 15px rgba(136, 211, 206, 0.6); }
+        }
+        
+        .wiki-resource-icon {
+            animation: iconPulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes iconPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    </style>
+</head>
+<body class="wiki-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="index.html#" class="logo">1366+1402<span> EVONY</span></a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="nav-links">
+            <a href="index.html#">Home</a>
+            <a href="index.html#rules">Rules</a>
+            <a href="index.html#sub-cities">Sub Cities</a>
+            <a href="index.html#warScoreData">War Score</a>
+            <a href="#">Wiki</a>
+        </div>
+    </nav>
+
+    <!-- Wiki Hero Section -->
+    <section class="wiki-hero">
+        <div class="wiki-hero-content">
+            <h1>1366+1402 Evony Wiki</h1>
+            <p>Your comprehensive guide to mastering the game</p>
+            <div class="wiki-search-container">
+                <input type="text" class="wiki-search" placeholder="Search the wiki...">
+                <button class="wiki-search-btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wiki Main Content -->
+    <div class="wiki-container">
+        <!-- Sidebar Navigation -->
+        <aside class="wiki-sidebar">
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-book-open"></i> Game Basics</h3>
+                <ul>
+                    <li><a href="#getting-started" class="sidebar-link">Getting Started</a></li>
+                    <li><a href="#interface-guide" class="sidebar-link">Interface Guide</a></li>
+                    <li><a href="#resources" class="sidebar-link">Resources</a></li>
+                    <li><a href="#buildings" class="sidebar-link">Buildings</a></li>
+                </ul>
+            </div>
+            
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-shield-alt"></i> Military</h3>
+                <ul>
+                    <li><a href="#troop-types" class="sidebar-link">Troop Types</a></li>
+                    <li><a href="#combat-mechanics" class="sidebar-link">Combat Mechanics</a></li>
+                    <li><a href="#defense-strategies" class="sidebar-link">Defense Strategies</a></li>
+                </ul>
+            </div>
+            
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-chess-queen"></i> Advanced</h3>
+                <ul>
+                    <li><a href="#alliance-management" class="sidebar-link">Alliance Management</a></li>
+                    <li><a href="#events" class="sidebar-link">Events</a></li>
+                    <li><a href="#research" class="sidebar-link">Research</a></li>
+                </ul>
+            </div>
+            
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-video"></i> Video Guides</h3>
+                <ul>
+                    <li><a href="#beginner-guides" class="sidebar-link">Beginner Guides</a></li>
+                    <li><a href="#advanced-tactics" class="sidebar-link">Advanced Tactics</a></li>
+                    <li><a href="#event-walkthroughs" class="sidebar-link">Event Walkthroughs</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="wiki-content">
+            <!-- Getting Started Section -->
+            <article id="getting-started" class="wiki-article">
+                <h2><i class="fas fa-play-circle"></i> Getting Started</h2>
+                <div class="article-content">
+                    <h3>Beginner's Guide</h3>
+                    <p>Welcome to 1366 Evony! This guide will help you establish your empire and grow your power efficiently.</p>
+                    
+                    <div class="wiki-info-box">
+                        <h4><i class="fas fa-lightbulb"></i> Quick Tips</h4>
+                        <ul>
+                            <li>Complete the tutorial for valuable rewards</li>
+                            <li>Upgrade your City Hall to unlock new features</li>
+                            <li>Join an alliance early for protection</li>
+                            <li>Focus on resource production in the first few days</li>
+                            <li>Use shields when offline to protect your city</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>First 7 Days Roadmap</h3>
+                    <div class="wiki-table-container">
+                        <table class="wiki-table">
+                            <thead>
+                                <tr>
+                                    <th>Day</th>
+                                    <th>Focus</th>
+                                    <th>Target</th>
+                                    <th>Priority</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1-2</td>
+                                    <td>Resource Buildings</td>
+                                    <td>Level 10 Farms/Mines</td>
+                                    <td>High</td>
+                                </tr>
+                                <tr>
+                                    <td>3-4</td>
+                                    <td>Military Buildings</td>
+                                    <td>Barracks Level 8</td>
+                                    <td>Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>5-7</td>
+                                    <td>Research & Defenses</td>
+                                    <td>Basic Tech Complete</td>
+                                    <td>High</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Resources Section -->
+            <article id="resources" class="wiki-article">
+                <h2><i class="fas fa-coins"></i> Resources</h2>
+                <div class="article-content">
+                    <p>Resources are the lifeblood of your empire. Manage them wisely to ensure steady growth.</p>
+                    
+                    <div class="wiki-resource-grid">
+                        <div class="wiki-resource-card">
+                            <div class="wiki-resource-icon wiki-resource-food">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3>Food</h3>
+                            <p>Used to feed your troops and research certain technologies</p>
+                            <ul>
+                                <li><strong>Production:</strong> Farms</li>
+                                <li><strong>Storage:</strong> Granary</li>
+                                <li><strong>Base Rate:</strong> 500/hr</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wiki-resource-card">
+                            <div class="wiki-resource-icon wiki-resource-wood">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <h3>Wood</h3>
+                            <p>Essential for building construction and troop training</p>
+                            <ul>
+                                <li><strong>Production:</strong> Lumber Mills</li>
+                                <li><strong>Storage:</strong> Warehouse</li>
+                                <li><strong>Base Rate:</strong> 500/hr</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wiki-resource-card">
+                            <div class="wiki-resource-icon wiki-resource-stone">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                            <h3>Stone</h3>
+                            <p>Required for advanced buildings and fortifications</p>
+                            <ul>
+                                <li><strong>Production:</strong> Quarries</li>
+                                <li><strong>Storage:</strong> Warehouse</li>
+                                <li><strong>Base Rate:</strong> 300/hr</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="wiki-resource-card">
+                            <div class="wiki-resource-icon wiki-resource-iron">
+                                <i class="fas fa-hammer"></i>
+                            </div>
+                            <h3>Iron</h3>
+                            <p>Needed for military equipment and advanced research</p>
+                            <ul>
+                                <li><strong>Production:</strong> Iron Mines</li>
+                                <li><strong>Storage:</strong> Warehouse</li>
+                                <li><strong>Base Rate:</strong> 300/hr</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Troop Types Section -->
+            <article id="troop-types" class="wiki-article">
+                <h2><i class="fas fa-shield-alt"></i> Troop Types</h2>
+                <div class="article-content">
+                    <p>Build a balanced army to handle any military situation. Each unit type has strengths and weaknesses.</p>
+                    
+                    <div class="wiki-tabs">
+                        <button class="wiki-tab-button active" data-tab="infantry">Infantry</button>
+                        <button class="wiki-tab-button" data-tab="cavalry">Cavalry</button>
+                        <button class="wiki-tab-button" data-tab="archers">Archers</button>
+                        <button class="wiki-tab-button" data-tab="siege">Siege</button>
+                    </div>
+                    
+                    <div id="infantry" class="wiki-tab-content active">
+                        <h3>Infantry Units</h3>
+                        <p>Strong against cavalry but vulnerable to archers. Best used for defense and close combat.</p>
+                        <div class="wiki-unit-grid">
+                            <div class="wiki-unit-card">
+                                <div class="unit-icon infantry">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <h4>Militia</h4>
+                                <p><strong>Requirements:</strong> Barracks Lv.1</p>
+                                <p><strong>Cost:</strong> 50 Food, 30 Wood</p>
+                                <p><strong>Attack:</strong> 10 | <strong>Defense:</strong> 15</p>
+                            </div>
+                            
+                            <div class="wiki-unit-card">
+                                <div class="unit-icon infantry">
+                                    <i class="fas fa-helmet-battle"></i>
+                                </div>
+                                <h4>Swordsman</h4>
+                                <p><strong>Requirements:</strong> Barracks Lv.3</p>
+                                <p><strong>Cost:</strong> 80 Food, 50 Wood</p>
+                                <p><strong>Attack:</strong> 25 | <strong>Defense:</strong> 30</p>
+                            </div>
+                            
+                            <div class="wiki-unit-card">
+                                <div class="unit-icon infantry">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4>Spearman</h4>
+                                <p><strong>Requirements:</strong> Barracks Lv.5</p>
+                                <p><strong>Cost:</strong> 100 Food, 70 Wood</p>
+                                <p><strong>Attack:</strong> 20 | <strong>Defense:</strong> 40</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div id="cavalry" class="wiki-tab-content">
+                        <!-- Cavalry content would go here -->
+                    </div>
+                    
+                    <!-- Other tab content would go here -->
+                </div>
+            </article>
+
+            <!-- Video Guides Section -->
+            <section id="beginner-guides" class="wiki-video-section">
+                <h2><i class="fab fa-youtube"></i> Beginner Video Guides</h2>
+                <p>Learn the basics from top players with these tutorial videos</p>
+                
+                <div class="wiki-video-grid">
+                    <div class="wiki-video-card">
+                        <iframe src="https://www.youtube.com/embed/BdavDqqUojg" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                        <div class="wiki-video-info">
+                            <h4>Complete Beginner's Guide</h4>
+                            <p>Learn the basics in under 15 minutes</p>
+                            <span class="video-duration"><i class="fas fa-clock"></i> 14:32</span>
+                        </div>
+                    </div>
+                    
+                    <div class="wiki-video-card">
+                        <iframe src="https://www.youtube.com/embed/RQzEYMjXeS0" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                        <div class="wiki-video-info">
+                            <h4>Resource Management</h4>
+                            <p>Never run out of resources again</p>
+                            <span class="video-duration"><i class="fas fa-clock"></i> 12:45</span>
+                        </div>
+                    </div>
+                    
+					<div class="wiki-video-card">
+                        <iframe src="https://www.youtube.com/embed/Sa4s2Wpu07g" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                        <div class="wiki-video-info">
+                            <h4>Resource Management</h4>
+                            <p>Never run out of resources again</p>
+                            <span class="video-duration"><i class="fas fa-clock"></i> 12:45</span>
+                        </div>
+                    </div>
+					
+                    <div class="wiki-video-card">
+                        <iframe src="https://www.youtube.com/embed/HSPmUWAMbh4" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                        <div class="wiki-video-info">
+                            <h4>First 7 Days Strategy</h4>
+                            <p>Optimal build order for new players</p>
+                            <span class="video-duration"><i class="fas fa-clock"></i> 18:20</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Wiki Footer -->
+    <footer class="wiki-footer">
+        <div class="wiki-footer-content">
+            <div class="wiki-update">
+                <h3><i class="fas fa-sync-alt"></i> Wiki Updates</h3>
+                <ul class="wiki-update-list">
+                    <li class="wiki-update-item">
+                        <span class="wiki-update-date">Nov 15, 2023</span> - Added Troop Guides
+                    </li>
+                    <li class="wiki-update-item">
+                        <span class="wiki-update-date">Nov 10, 2023</span> - Updated Resource Section
+                    </li>
+                    <li class="wiki-update-item">
+                        <span class="wiki-update-date">Nov 5, 2023</span> - New Beginner Videos Added
+                    </li>
+                </ul>
+            </div>
+            <div class="wiki-contribute">
+                <h3><i class="fas fa-edit"></i> Contribute</h3>
+                <p>Help us improve the wiki by submitting your knowledge!</p>
+                <button class="wiki-contribute-btn">
+                    <i href="mailto:admin@g4rzk.com" class="fas fa-edit"></i> Submit Edit
+                </button>
+            </div>
+        </div>
+        <div class="wiki-copyright">
+            <p>&copy; 2023 1366 Evony Wiki. All game content belongs to Evony.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('fa-times');
+        });
+
+        // Tab functionality
+        document.querySelectorAll('.wiki-tab-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                const tabContainer = this.closest('.article-content');
+                
+                // Remove active class from all buttons and content
+                tabContainer.querySelectorAll('.wiki-tab-button').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                tabContainer.querySelectorAll('.wiki-tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Smooth scrolling for sidebar links
+        document.querySelectorAll('.sidebar-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+                
+                // Update URL without page jump
+                history.pushState(null, null, targetId);
+            });
+        });
+
+        // Scroll animations for articles
+        function checkVisibility() {
+            const articles = document.querySelectorAll('.wiki-article');
+            articles.forEach(article => {
+                const rect = article.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 100) {
+                    article.classList.add('visible');
+                }
+            });
+        }
+
+        // Run on load and scroll
+        window.addEventListener('load', checkVisibility);
+        window.addEventListener('scroll', checkVisibility);
+
+        // Initialize with first article visible
+        document.querySelector('.wiki-article').classList.add('visible');
+
+        // Search functionality
+        document.querySelector('.wiki-search-btn').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.wiki-search').value.toLowerCase();
+            if (searchTerm.trim() === '') return;
+            
+            // This would be replaced with actual search functionality
+            alert('Search functionality would show results for: ' + searchTerm);
+        });
+    </script>
+</body>
+</html>
