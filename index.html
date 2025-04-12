@@ -7,13 +7,12 @@
 	<meta name="author" content="Angga Kurniawan (@g4rzk)">
 	<meta name="keywords" content="1366 Evony, Evony">
 	<meta name="description" content="Join hundreds of players on server 1366+1402 with the best strategy. Build your keep, forge alliances, player vs player and conquer the throne.">
-	
 	<link REL="shortcut icon" href="https://www.evony.com/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
 	<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-    <link rel="stylesheet" href="./styles.css">
-	<script src="script.js"></script>
+    <link rel="stylesheet" href="/css/styles.css">
+	<script src="/js/ServerWarScore.js"></script>
 </head>
 
 <body>
@@ -28,7 +27,7 @@
             <a href="#rules">Rules</a>
             <a href="#sub-cities">Sub Cities</a>
             <a href="#warScoreData">War Score</a>
-            <a href="wiki.html">Wiki</a>
+            <a href="/Wiki/">Wiki</a>
         </div>
     </nav>
     
@@ -322,104 +321,116 @@
 			});
 		}
 
-		// Function to render war score data
-		function renderWarScoreData(date) {
-			const tableBody = document.getElementById('war-score-data');
-			const dateDisplay = document.getElementById('current-date');
-			const scoreDate = document.getElementById('score-date');
-			const lastUpdate = document.getElementById('last-update-time');
-			
-			// Show loading state
-			tableBody.innerHTML = `
-				<div class="loading-row">
-					<div class="loading-spinner"></div>
-					<span>Loading war score data...</span>
-				</div>
-			`;
-			
-			// Simulate loading delay (remove in production)
-			setTimeout(() => {
-				const data = warScoreData[date] || [];
-				
-				// Update date displays
-				dateDisplay.textContent = formatDate(date);
-				scoreDate.innerHTML = `<i class="fas fa-calendar-alt"></i> ${formatDate(date)}`;
-				lastUpdate.textContent = new Date().toLocaleString();
-				
-				// Clear table
-				tableBody.innerHTML = '';
-				
-				if (data.length === 0) {
-					tableBody.innerHTML = `
-						<div class="no-data">
-							<i class="fas fa-database"></i>
-							<span>No war score data available for this date</span>
-						</div>
-					`;
-					return;
-				}
-				
-				// Apply filters
-				const searchTerm = document.getElementById('war-score-search').value.toLowerCase();
-				const scoreType = document.getElementById('score-type-filter').value;
-				
-				let filteredData = data.filter(player => 
-					player.name.toLowerCase().includes(searchTerm) || 
-					player.alliance.toLowerCase().includes(searchTerm)
-				);
-				
-				// Apply score type filter
-				switch(scoreType) {
-					case 'top-positive':
-						filteredData.sort((a, b) => b.positive - a.positive);
-						break;
-					case 'top-negative':
-						filteredData.sort((a, b) => b.negative - a.negative);
-						break;
-					case 'balanced':
-						filteredData.sort((a, b) => Math.abs(b.balance) - Math.abs(a.balance));
-						break;
-					default:
-						// Default sorting by rank
-						filteredData.sort((a, b) => a.rank - b.rank);
-				}
-				
-				// Render rows
-				filteredData.forEach(player => {
-					const row = document.createElement('div');
-					row.className = 'table-row';
-					
-					const balanceClass = player.balance >= 0 ? 'positive' : 'negative';
-					
-					row.innerHTML = `
-						<div class="table-cell rank">${player.rank}</div>
-						<div class="table-cell player">
-							<div class="player-avatar">${player.name.charAt(0)}</div>
-							<span>${player.name}</span>
-						</div>
-						<div class="table-cell alliance">${player.alliance}</div>
-						<div class="table-cell positive">+${player.positive}</div>
-						<div class="table-cell negative">-${player.negative}</div>
-						<div class="table-cell balance ${balanceClass}">
-							${player.balance >= 0 ? '' : ''}${player.balance}
-						</div>
-					`;
-					
-					tableBody.appendChild(row);
-				});
-			}, 800); // Simulated delay
-		}
+        // Ganti fungsi renderWarScoreData dengan yang lebih responsive
+        function renderWarScoreData(date) {
+            const tableBody = document.getElementById('war-score-data');
+            const dateDisplay = document.getElementById('current-date');
+            const scoreDate = document.getElementById('score-date');
+            const lastUpdate = document.getElementById('last-update-time');
+            
+            // Show loading state
+            tableBody.innerHTML = `
+                <div class="loading-row">
+                    <div class="loading-spinner"></div>
+                    <span>Loading war score data...</span>
+                </div>
+            `;
+            
+            setTimeout(() => {
+                const data = warScoreData[date] || [];
+                
+                // Update date displays
+                dateDisplay.textContent = formatDate(date);
+                scoreDate.innerHTML = `<i class="fas fa-calendar-alt"></i> ${formatDate(date)}`;
+                lastUpdate.textContent = new Date().toLocaleString();
+                
+                // Clear table
+                tableBody.innerHTML = '';
+                
+                if (data.length === 0) {
+                    tableBody.innerHTML = `
+                        <div class="no-data">
+                            <i class="fas fa-database"></i>
+                            <span>No war score data available for this date</span>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                // Apply filters
+                const searchTerm = document.getElementById('war-score-search').value.toLowerCase();
+                const scoreType = document.getElementById('score-type-filter').value;
+                
+                let filteredData = data.filter(player => 
+                    player.name.toLowerCase().includes(searchTerm) || 
+                    player.alliance.toLowerCase().includes(searchTerm)
+                );
+                
+                // Apply score type filter
+                switch(scoreType) {
+                    case 'top-positive':
+                        filteredData.sort((a, b) => b.positive - a.positive);
+                        break;
+                    case 'top-negative':
+                        filteredData.sort((a, b) => b.negative - a.negative);
+                        break;
+                    case 'balanced':
+                        filteredData.sort((a, b) => Math.abs(b.balance) - Math.abs(a.balance));
+                        break;
+                    default:
+                        filteredData.sort((a, b) => a.rank - b.rank);
+                }
+                
+                // Check screen width to determine layout
+                const isMobile = window.innerWidth < 768;
+                
+                filteredData.forEach(player => {
+                    const row = document.createElement('div');
+                    row.className = 'table-row';
+                    
+                    const balanceClass = player.balance >= 0 ? 'positive' : 'negative';
+                    
+                    if (isMobile) {
+                        row.innerHTML = `
+                            <div class="table-cell rank">${player.rank}</div>
+                            <div class="table-cell player">
+                                <div class="player-avatar">${player.name.charAt(0)}</div>
+                                <div>
+                                    <div class="player-name">${player.name}</div>
+                                    <div class="alliance-mobile">${player.alliance}</div>
+                                </div>
+                                <div class="table-cell positive">+${player.positive}</div>
+                                <div class="table-cell negative">-${player.negative}</div>
+                            </div>
+                            
+                        `;
+                    } else {
+                        row.innerHTML = `
+                            <div class="table-cell rank">${player.rank}</div>
+                            <div class="table-cell player">
+                                <div class="player-avatar">${player.name.charAt(0)}</div>
+                                <span>${player.name}</span>
+                            </div>
+                            <div class="table-cell alliance">${player.alliance}</div>
+                            <div class="table-cell positive">+${player.positive}</div>
+                            <div class="table-cell negative">-${player.negative}</div>
+                            <div class="table-cell balance ${balanceClass}">
+                                ${player.balance >= 0 ? '' : ''}${player.balance}
+                            </div>
+                        `;
+                    }
+                    
+                    tableBody.appendChild(row);
+                });
+            }, 800);
+        }
 
-		// Function to navigate dates
-		function navigateDates(direction) {
-			if (direction === 'prev' && currentDateIndex < availableDates.length - 1) {
-				currentDateIndex++;
-			} else if (direction === 'next' && currentDateIndex > 0) {
-				currentDateIndex--;
-		}
-			
-			renderWarScoreData(availableDates[currentDateIndex]);
-		}
+        // Tambahkan event listener untuk resize window
+        window.addEventListener('resize', function() {
+            if (availableDates.length > 0) {
+                renderWarScoreData(availableDates[currentDateIndex]);
+            }
+        });
 
 		// Event listeners
 		document.getElementById('war-score-search').addEventListener('input', () => {
@@ -502,53 +513,12 @@
                 </ul>
             </div>
         </div>
+        
         <div class="copyright">
-            <p>&copy; 2023 1366+1402 Evony. All rights reserved.</p>
+            <p>&copy; 2023 by G4RZK 1366+1402 Evony. All rights reserved.</p>
         </div>
     </footer>
 	
-	<script>
-		
-		// Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-        
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        
-        menuToggle.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-		
-		// Rules Agreement Button
-		document.querySelector('.rules-agree-btn').addEventListener('click', function() {
-			// Store agreement in localStorage
-			localStorage.setItem('rulesAgreed', 'true');
-			
-			// Show confirmation
-			this.innerHTML = '<i class="fas fa-check"></i> Rules Accepted';
-			this.style.backgroundColor = '#2E7D32';
-			
-			// Optional: Scroll to top
-			window.scrollTo({ top: 0, behavior: 'smooth' });
-		});
-
-		// Check if rules were already agreed to
-		document.addEventListener('DOMContentLoaded', function() {
-			if(localStorage.getItem('rulesAgreed')) {
-				const btn = document.querySelector('.rules-agree-btn');
-				btn.innerHTML = '<i class="fas fa-check"></i> Rules Accepted';
-				btn.style.backgroundColor = '#2E7D32';
-				btn.disabled = true;
-			}
-		});
-	</script>
+	<script src="js/script.js"></script>
 </body>
 </html>
