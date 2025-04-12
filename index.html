@@ -321,116 +321,135 @@
 			});
 		}
 
-        // Ganti fungsi renderWarScoreData dengan yang lebih responsive
         function renderWarScoreData(date) {
-            const tableBody = document.getElementById('war-score-data');
-            const dateDisplay = document.getElementById('current-date');
-            const scoreDate = document.getElementById('score-date');
-            const lastUpdate = document.getElementById('last-update-time');
+        const tableBody = document.getElementById('war-score-data');
+        const dateDisplay = document.getElementById('current-date');
+        const scoreDate = document.getElementById('score-date');
+        const lastUpdate = document.getElementById('last-update-time');
+        
+        // Show loading state
+        tableBody.innerHTML = `
+            <div class="loading-row">
+                <div class="loading-spinner"></div>
+                <span>Loading war score data...</span>
+            </div>
+        `;
+        
+        setTimeout(() => {
+            const data = warScoreData[date] || [];
             
-            // Show loading state
-            tableBody.innerHTML = `
-                <div class="loading-row">
-                    <div class="loading-spinner"></div>
-                    <span>Loading war score data...</span>
-                </div>
-            `;
+            // Update date displays
+            dateDisplay.textContent = formatDate(date);
+            scoreDate.innerHTML = `<i class="fas fa-calendar-alt"></i> ${formatDate(date)}`;
+            lastUpdate.textContent = new Date().toLocaleString();
             
-            setTimeout(() => {
-                const data = warScoreData[date] || [];
+            // Clear table
+            tableBody.innerHTML = '';
+            
+            if (data.length === 0) {
+                tableBody.innerHTML = `
+                    <div class="no-data">
+                        <i class="fas fa-database"></i>
+                        <span>No war score data available for this date</span>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Apply filters
+            const searchTerm = document.getElementById('war-score-search').value.toLowerCase();
+            const scoreType = document.getElementById('score-type-filter').value;
+            
+            let filteredData = data.filter(player => 
+                player.name.toLowerCase().includes(searchTerm) || 
+                player.alliance.toLowerCase().includes(searchTerm)
+            );
+            
+            // Apply score type filter
+            switch(scoreType) {
+                case 'top-positive':
+                    filteredData.sort((a, b) => b.positive - a.positive);
+                    break;
+                case 'top-negative':
+                    filteredData.sort((a, b) => b.negative - a.negative);
+                    break;
+                case 'balanced':
+                    filteredData.sort((a, b) => Math.abs(b.balance) - Math.abs(a.balance));
+                    break;
+                default:
+                    filteredData.sort((a, b) => a.rank - b.rank);
+            }
+            
+            // Check screen width to determine layout
+            const isMobile = window.innerWidth < 768;
+            const isSmallMobile = window.innerWidth < 480;
+            
+            filteredData.forEach(player => {
+                const row = document.createElement('div');
+                row.className = 'table-row';
                 
-                // Update date displays
-                dateDisplay.textContent = formatDate(date);
-                scoreDate.innerHTML = `<i class="fas fa-calendar-alt"></i> ${formatDate(date)}`;
-                lastUpdate.textContent = new Date().toLocaleString();
+                const balanceClass = player.balance >= 0 ? 'positive' : 'negative';
                 
-                // Clear table
-                tableBody.innerHTML = '';
-                
-                if (data.length === 0) {
-                    tableBody.innerHTML = `
-                        <div class="no-data">
-                            <i class="fas fa-database"></i>
-                            <span>No war score data available for this date</span>
+                if (isSmallMobile) {
+                    row.innerHTML = `
+                        <div class="table-cell rank">${player.rank}</div>
+                        <div class="table-cell player">
+                            <div class="player-avatar">${player.name.charAt(0)}</div>
+                            <div>
+                                <div class="player-name">${player.name}</div>
+                                <div class="alliance-mobile">${player.alliance}</div>
+                            </div>
+                        </div>
+                        <div class="table-cell positive">${player.positive}</div>
+                        <div class="table-cell negative">${player.negative}</div>
+                        <div class="table-cell balance ${balanceClass}">
+                            ${player.balance >= 0 ? '' : ''}${player.balance}
                         </div>
                     `;
-                    return;
+                } else if (isMobile) {
+                    row.innerHTML = `
+                        <div class="table-cell rank">${player.rank}</div>
+                        <div class="table-cell player">
+                            <div class="player-avatar">${player.name.charAt(0)}</div>
+                            <div>
+                                <div class="player-name">${player.name}</div>
+                                <div class="alliance-mobile">${player.alliance}</div>
+                            </div>
+                        </div>
+                        <div class="table-cell alliance">${player.alliance}</div>
+                        <div class="table-cell positive">${player.positive}</div>
+                        <div class="table-cell negative">${player.negative}</div>
+                        <div class="table-cell balance ${balanceClass}">
+                            ${player.balance >= 0 ? '' : ''}${player.balance}
+                        </div>
+                    `;
+                } else {
+                    row.innerHTML = `
+                        <div class="table-cell rank">${player.rank}</div>
+                        <div class="table-cell player">
+                            <div class="player-avatar">${player.name.charAt(0)}</div>
+                            <span>${player.name}</span>
+                        </div>
+                        <div class="table-cell alliance">${player.alliance}</div>
+                        <div class="table-cell positive">${player.positive}</div>
+                        <div class="table-cell negative">${player.negative}</div>
+                        <div class="table-cell balance ${balanceClass}">
+                            ${player.balance >= 0 ? '' : ''}${player.balance}
+                        </div>
+                    `;
                 }
                 
-                // Apply filters
-                const searchTerm = document.getElementById('war-score-search').value.toLowerCase();
-                const scoreType = document.getElementById('score-type-filter').value;
-                
-                let filteredData = data.filter(player => 
-                    player.name.toLowerCase().includes(searchTerm) || 
-                    player.alliance.toLowerCase().includes(searchTerm)
-                );
-                
-                // Apply score type filter
-                switch(scoreType) {
-                    case 'top-positive':
-                        filteredData.sort((a, b) => b.positive - a.positive);
-                        break;
-                    case 'top-negative':
-                        filteredData.sort((a, b) => b.negative - a.negative);
-                        break;
-                    case 'balanced':
-                        filteredData.sort((a, b) => Math.abs(b.balance) - Math.abs(a.balance));
-                        break;
-                    default:
-                        filteredData.sort((a, b) => a.rank - b.rank);
-                }
-                
-                // Check screen width to determine layout
-                const isMobile = window.innerWidth < 768;
-                
-                filteredData.forEach(player => {
-                    const row = document.createElement('div');
-                    row.className = 'table-row';
-                    
-                    const balanceClass = player.balance >= 0 ? 'positive' : 'negative';
-                    
-                    if (isMobile) {
-                        row.innerHTML = `
-                            <div class="table-cell rank">${player.rank}</div>
-                            <div class="table-cell player">
-                                <div class="player-avatar">${player.name.charAt(0)}</div>
-                                <div>
-                                    <div class="player-name">${player.name}</div>
-                                    <div class="alliance-mobile">${player.alliance}</div>
-                                </div>
-                                <div class="table-cell positive">+${player.positive}</div>
-                                <div class="table-cell negative">-${player.negative}</div>
-                            </div>
-                            
-                        `;
-                    } else {
-                        row.innerHTML = `
-                            <div class="table-cell rank">${player.rank}</div>
-                            <div class="table-cell player">
-                                <div class="player-avatar">${player.name.charAt(0)}</div>
-                                <span>${player.name}</span>
-                            </div>
-                            <div class="table-cell alliance">${player.alliance}</div>
-                            <div class="table-cell positive">+${player.positive}</div>
-                            <div class="table-cell negative">-${player.negative}</div>
-                            <div class="table-cell balance ${balanceClass}">
-                                ${player.balance >= 0 ? '' : ''}${player.balance}
-                            </div>
-                        `;
-                    }
-                    
-                    tableBody.appendChild(row);
-                });
-            }, 800);
-        }
+                tableBody.appendChild(row);
+            });
+        }, 800);
+    }
 
-        // Tambahkan event listener untuk resize window
-        window.addEventListener('resize', function() {
-            if (availableDates.length > 0) {
-                renderWarScoreData(availableDates[currentDateIndex]);
-            }
-        });
+    // Add resize event listener
+    window.addEventListener('resize', function() {
+        if (availableDates.length > 0) {
+            renderWarScoreData(availableDates[currentDateIndex]);
+        }
+    });
 
 		// Event listeners
 		document.getElementById('war-score-search').addEventListener('input', () => {
