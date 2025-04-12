@@ -495,6 +495,109 @@ h1, h2, h3, h4 {
     animation: spin 1s linear infinite;
 }
 
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .table-row {
+      grid-template-columns: 50px 1fr 1fr;
+      grid-template-areas: 
+          "rank player player"
+          "alliance positive negative";
+      padding: 0.75rem 0.5rem;
+  }
+  
+  .rank {
+      grid-area: rank;
+      text-align: center;
+      align-self: center;
+  }
+  
+  .player {
+      grid-area: player;
+      flex-direction: row;
+      align-items: center;
+      gap: 0.5rem;
+  }
+  
+  .alliance {
+      grid-area: alliance;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+  }
+  
+  .positive {
+      grid-area: positive;
+      text-align: right;
+  }
+  
+  .negative {
+      grid-area: negative;
+      text-align: right;
+  }
+  
+  .table-header .table-row {
+      display: none;
+  }
+  
+  .table-header::after {
+      content: "War Score Data - Scroll horizontally to view all data";
+      display: block;
+      padding: 0.5rem;
+      text-align: center;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+  }
+  
+  .date-navigation span {
+      font-size: 0.9rem;
+  }
+  
+  #score-type-filter {
+      width: 100%;
+  }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+  .section-title h2 {
+      font-size: 1.5rem;
+  }
+  
+  .section-title p {
+      font-size: 0.9rem;
+  }
+  
+  .table-row {
+      grid-template-columns: 40px 1fr;
+      grid-template-areas: 
+          "rank player"
+          "positive negative";
+  }
+  
+  .alliance {
+      display: none;
+  }
+  
+  .player-name {
+      font-weight: 500;
+  }
+  
+  .alliance-mobile {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+  }
+  
+  .positive::before {
+      content: "+";
+      margin-right: 0.2rem;
+  }
+  
+  .negative::before {
+      content: "-";
+      margin-right: 0.2rem;
+  }
+}
+
 /* Tambahkan ini di bagian responsive styles.css */
 @media (max-width: 992px) {
   .table-row {
