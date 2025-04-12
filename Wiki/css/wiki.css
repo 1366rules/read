@@ -529,7 +529,7 @@
 
 /* Wiki Footer */
 .wiki-footer {
-    background: #090912;
+    background: #0f0f1b;
     padding: 3rem 5% 1.5rem;
     margin-top: 3rem;
 }
@@ -630,24 +630,28 @@
     overflow-x: auto;
     margin: 1.5rem 0;
     border-radius: 8px;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
 }
 
 .wiki-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
+    min-width: 600px; /* Minimum width before scrolling kicks in */
 }
 
 .wiki-table th, .wiki-table td {
-    padding: 1rem;
+    padding: 0.75rem 1rem; /* Slightly reduced padding for mobile */
     text-align: left;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .wiki-table th {
     background: rgba(110, 69, 226, 0.2);
-    color: var(--wiki-light);
+    color: white;
     font-weight: 600;
+    position: sticky;
+    top: 0; /* Makes headers stick during horizontal scroll */
 }
 
 .wiki-table tbody tr {
@@ -656,7 +660,31 @@
 
 .wiki-table tbody tr:hover {
     background: rgba(110, 69, 226, 0.1);
-    transform: translateX(5px);
+}
+
+/* Responsive table adjustments */
+@media (max-width: 768px) {
+    .wiki-table th, .wiki-table td {
+        padding: 0.5rem 0.75rem; /* Smaller padding on mobile */
+        font-size: 0.9rem; /* Slightly smaller font */
+    }
+    
+    .wiki-table-container {
+        border: 1px solid rgba(255,255,255,0.1); /* Add border for better visibility */
+        -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    }
+}
+
+@media (max-width: 480px) {
+    .wiki-table th, .wiki-table td {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.85rem;
+    }
+    
+    /* Optional: Add zebra striping for better readability on small screens */
+    .wiki-table tbody tr:nth-child(odd) {
+        background: rgba(255,255,255,0.03);
+    }
 }
 
 /* Animations */
