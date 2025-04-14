@@ -349,15 +349,6 @@
             const dateDisplay = document.getElementById('current-date');
             const scoreDate = document.getElementById('score-date');
             const lastUpdate = document.getElementById('last-update-time');
-
-            // Show loading state
-            tableBody.innerHTML = `
-                    <div class="loading-row">
-                        <div class="loading-spinner"></div>
-                        <span>Loading war score data...</span>
-                    </div>
-                `;
-
             setTimeout(() => {
                 const data = warScoreData[date] || [];
 
