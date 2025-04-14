@@ -602,6 +602,10 @@ h1, h2, h3, h4 {
         font-size: 0.9rem;
         color: #4caf50
     }
+    .balance-mobile {
+        display: block;
+        font-size: 0.9rem;
+    }
     .negative-mobile {
         display: block;
         font-size: 0.9rem;
@@ -614,6 +618,14 @@ h1, h2, h3, h4 {
     .negative::before {
         content: "-";
         margin-right: 0.2rem;
+    }
+
+    .balance-mobile.positive {
+        color: #4caf50;
+    }
+    
+    .balance-mobile.negative {
+        color: #f44336;
     }
 }
 
