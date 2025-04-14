@@ -351,6 +351,21 @@ h1, h2, h3, h4 {
     text-align: center;
 }
 
+.date-indicator {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding: 0 0.5rem;
+}
+
+.date-navigation button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.date-navigation button:disabled:hover {
+    background: transparent !important;
+}
+
 #score-type-filter {
     padding: 0.8rem 1rem;
     border-radius: 5px;
@@ -558,44 +573,48 @@ h1, h2, h3, h4 {
 
 /* Small Mobile Devices */
 @media (max-width: 480px) {
-  .section-title h2 {
-      font-size: 1.5rem;
-  }
-  
-  .section-title p {
-      font-size: 0.9rem;
-  }
-  
-  .table-row {
-      grid-template-columns: 40px 1fr;
-      grid-template-areas: 
-          "rank player"
-          "positive negative";
-  }
-  
-  .alliance {
-      display: none;
-  }
-  
-  .player-name {
-      font-weight: 500;
-  }
-  
-  .alliance-mobile {
-      display: block;
-      font-size: 0.8rem;
-      color: var(--text-secondary);
-  }
-  
-  .positive::before {
-      content: "+";
-      margin-right: 0.2rem;
-  }
-  
-  .negative::before {
-      content: "-";
-      margin-right: 0.2rem;
-  }
+    .section-title h2 {
+        font-size: 1.5rem;
+    }
+    .section-title p {
+        font-size: 0.9rem;
+    }
+    table-row {
+        grid-template-columns: 40px 1fr;
+        grid-template-areas: 
+            "rank player"
+            "positive negative";
+    }
+    .alliance {
+        display: none;
+    }
+    .player-name {
+        font-weight: 500;
+    }
+    .alliance-mobile {
+        display: block;
+        font-size: 0.8rem;
+        color: var(--text-secondary);
+    }
+
+    .positive-mobile {
+        display: block;
+        font-size: 0.9rem;
+        color: #4caf50
+    }
+    .negative-mobile {
+        display: block;
+        font-size: 0.9rem;
+        color: #f44336;
+    }
+    .positive::before {
+        content: "+";
+        margin-right: 0.2rem;
+    }
+    .negative::before {
+        content: "-";
+        margin-right: 0.2rem;
+    }
 }
 
 /* Tambahkan ini di bagian responsive styles.css */
