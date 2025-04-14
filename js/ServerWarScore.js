@@ -1,6 +1,6 @@
 // SERVER WAR DATA 1366+1402
 const warScoreData = {
-	"2025-04-13": [
+	"2025-04-14": [
 		{ rank: 1, name: "BAY ", alliance: "KMS", positive: 3460415783, negative: 1621317376, balance: 1839098407 },
 		{ rank: 2, name: "ONE", alliance: "MOO", positive: 2762878262, negative: 1438462592, balance: 1324415670 },
 		{ rank: 3, name: "xxxODINxxx", alliance: "SCC", positive: 2139535746, negative: 1099152000, balance: 1040383746 },
