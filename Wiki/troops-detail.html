@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troop Details - Evony Wiki</title>
+    <meta name="author" content="G4RZK">
+    <meta name="keywords" content="Evony, Evony troops, Evony army, Evony guide">
+    <meta name="description" content="Complete guide to all troop types in Evony: The King's Return with detailed stats and images.">
+    <link rel="shortcut icon" href="https://www.evony.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Wiki/css/wiki.css">
+    <style>
+        .troop-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .troop-card {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .troop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-color: rgba(110, 69, 226, 0.3);
+        }
+        
+        .troop-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .troop-info {
+            padding: 1.5rem;
+        }
+        
+        .troop-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .ground-type { background: #4CAF50; color: white; }
+        .mounted-type { background: #2196F3; color: white; }
+        .archer-type { background: #FF9800; color: white; }
+        .siege-type { background: #9C27B0; color: white; }
+        
+        .troop-stats {
+            margin-top: 1rem;
+        }
+        
+        .stat-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .stat-label {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .stat-value {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .troop-description {
+            margin-top: 1rem;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+        
+        .tier-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.7);
+            color: gold;
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .troop-weakness {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(255,0,0,0.1);
+            border-left: 3px solid #F44336;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .troop-strength {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(0,255,0,0.1);
+            border-left: 3px solid #4CAF50;
+            border-radius: 0 4px 4px 0;
+        }
+    </style>
+</head>
+
+<body class="wiki-page">
+
+    <!-- Wiki Navigation -->
+    <nav class="wiki-navbar">
+        <div class="wiki-nav-container">
+            <a href="../index.html" class="wiki-logo">1366+1402 <span>WIKI</span></a>
+            <div class="wiki-search-box">
+                <input type="text" placeholder="Search the wiki...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="wiki-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="wiki-nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../Wiki">Wiki Home</a>
+                <a href="pvp-guide.html">PVP Guide</a>
+                <a href="building-guide.html">Building Guide</a>
+                <a href="generals-guide.html">Generals Guide</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Hero -->
+    <header class="wiki-hero">
+        <div class="wiki-hero-content">
+            <h1 class="wiki-title-animation">Evony Troop Details</h1>
+            <div class="wiki-meta">
+                <span><i class="fas fa-user-edit"></i> By: Administrator</span>
+                <span><i class="fas fa-calendar-alt"></i> Last Updated: June 20, 2023</span>
+                <span><i class="fas fa-eye"></i> 8,742 Views</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="wiki-container">
+        <aside class="wiki-sidebar">
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-list-ul"></i> Table of Contents</h3>
+                <ul>
+                    <li><a href="#ground-troops"><i class="fas fa-chevron-right"></i> Ground Troops</a></li>
+                    <li><a href="#mounted-troops"><i class="fas fa-chevron-right"></i> Mounted Troops</a></li>
+                    <li><a href="#archer-troops"><i class="fas fa-chevron-right"></i> Archer Troops</a></li>
+                    <li><a href="#siege-machines"><i class="fas fa-chevron-right"></i> Siege Machines</a></li>
+                    <li><a href="#troop-comparison"><i class="fas fa-chevron-right"></i> Troop Comparison</a></li>
+                </ul>
+            </div>
+
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-bookmark"></i> Related Guides</h3>
+                <ul>
+                    <li><a href="pvp-guide.html"><i class="fas fa-chevron-right"></i> PVP Guide</a></li>
+                    <li><a href="generals-guide.html"><i class="fas fa-chevron-right"></i> Generals Guide</a></li>
+                    <li><a href="research-guide.html"><i class="fas fa-chevron-right"></i> Research Guide</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="wiki-content">
+            <section id="introduction">
+                <h2><i class="fas fa-info-circle"></i> Introduction</h2>
+                <p>Evony: The King's Return features four main troop types, each with their own strengths and weaknesses. Understanding these troop types is essential for building a balanced army and achieving victory in battle.</p>
+                
+                <div class="wiki-info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Key Concept</h4>
+                    <p>Troops follow a rock-paper-scissors system where each type is strong against one type and weak against another. Proper troop composition is more important than raw numbers.</p>
+                </div>
+            </section>
+
+            <section id="ground-troops">
+                <h2><i class="fas fa-shield-alt"></i> Ground Troops</h2>
+                <p>Ground troops are heavily armored infantry units that excel in close combat. They are strong against mounted troops but vulnerable to archers.</p>
+                
+                <div class="troop-gallery">
+                    <div class="troop-card">
+                        <div class="tier-badge">T1</div>
+                        <img src="../img/ground-t1.PNG" alt="Warrior" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type ground-type">Ground</span>
+                            <h3>Warrior</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">50</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">80</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">100</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Slow</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Archer Troops
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> Mounted Troops
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="troop-card">
+                        <div class="tier-badge">T10</div>
+                        <img src="../img/ground-t10.PNG" alt="Royal Guard" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type ground-type">Ground</span>
+                            <h3>Royal Guard</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">500</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">800</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">1000</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Slow</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Archer Troops
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> Mounted Troops
+                            </div>
+                            <div class="troop-description">
+                                Elite heavy infantry with the highest defense of all ground troops. Essential for defending your keep.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="mounted-troops">
+                <h2><i class="fas fa-horse"></i> Mounted Troops</h2>
+                <p>Mounted troops are fast cavalry units that deal high damage. They are strong against archers but vulnerable to ground troops.</p>
+                
+                <div class="troop-gallery">
+                    <div class="troop-card">
+                        <div class="tier-badge">T1</div>
+                        <img src="../img/cav-t1.PNG" alt="Scout" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type mounted-type">Mounted</span>
+                            <h3>Scout</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">80</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">50</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">80</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Very Fast</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Ground Troops
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> Archer Troops
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="troop-card">
+                        <div class="tier-badge">T10</div>
+                        <img src="../img/cav-t10.PNG" alt="Dragoon" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type mounted-type">Mounted</span>
+                            <h3>Dragoon</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">800</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">500</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">800</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Very Fast</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Ground Troops
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> Archer Troops
+                            </div>
+                            <div class="troop-description">
+                                Elite cavalry with the highest attack power. Perfect for hit-and-run tactics and hunting enemy archers.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="archer-troops">
+                <h2><i class="fas fa-bow-arrow"></i> Archer Troops</h2>
+                <p>Archer troops are ranged units that attack from distance. They are strong against ground troops but vulnerable to mounted troops.</p>
+                
+                <div class="troop-gallery">
+                    <div class="troop-card">
+                        <div class="tier-badge">T1</div>
+                        <img src="../img/archer-t1.PNG" alt="Archer" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type archer-type">Archer</span>
+                            <h3>Archer</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">70</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">60</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">70</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Medium</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Mounted Troops
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> Ground Troops
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="troop-card">
+                        <div class="tier-badge">T10</div>
+                        <img src="../img/archer-t10.PNG" alt="Arbalester" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type archer-type">Archer</span>
+                            <h3>Arbalester</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">700</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">600</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">700</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Medium</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Mounted Troops
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> Ground Troops
+                            </div>
+                            <div class="troop-description">
+                                Elite crossbowmen with devastating ranged attacks. Excellent for defending against ground assaults.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="siege-machines">
+                <h2><i class="fas fa-catapult"></i> Siege Machines</h2>
+                <p>Siege machines are specialized units designed for attacking enemy buildings and walls. They have high attack but low defense.</p>
+                
+                <div class="troop-gallery">
+                    <div class="troop-card">
+                        <div class="tier-badge">T1</div>
+                        <img src="../img/siege-t1.PNG" alt="Ballista" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type siege-type">Siege</span>
+                            <h3>Ballista</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">90</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">30</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">60</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Very Slow</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Siege
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> All Combat Troops
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="troop-card">
+                        <div class="tier-badge">T10</div>
+                        <img src="../img/siege-t10.PNG" alt="Catapult" class="troop-image">
+                        <div class="troop-info">
+                            <span class="troop-type siege-type">Siege</span>
+                            <h3>Catapult</h3>
+                            <div class="troop-stats">
+                                <div class="stat-row">
+                                    <span class="stat-label">Attack:</span>
+                                    <span class="stat-value">900</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Defense:</span>
+                                    <span class="stat-value">300</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">HP:</span>
+                                    <span class="stat-value">600</span>
+                                </div>
+                                <div class="stat-row">
+                                    <span class="stat-label">Speed:</span>
+                                    <span class="stat-value">Very Slow</span>
+                                </div>
+                            </div>
+                            <div class="troop-strength">
+                                <strong>Strong Against:</strong> Siege
+                            </div>
+                            <div class="troop-weakness">
+                                <strong>Weak Against:</strong> All Combat Troops
+                            </div>
+                            <div class="troop-description">
+                                Massive siege weapons that deal tremendous damage to enemy structures. Must be protected during attacks.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="troop-comparison">
+                <h2><i class="fas fa-balance-scale"></i> Troop Comparison</h2>
+                <p>This table compares the key attributes of all troop types at Tier 10:</p>
+                
+                <div class="wiki-table-container">
+                    <table class="wiki-table">
+                        <thead>
+                            <tr>
+                                <th>Troop Type</th>
+                                <th>Attack</th>
+                                <th>Defense</th>
+                                <th>HP</th>
+                                <th>Speed</th>
+                                <th>Food Cost</th>
+                                <th>Training Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Royal Guard (Ground)</td>
+                                <td>500</td>
+                                <td>800</td>
+                                <td>1000</td>
+                                <td>Slow</td>
+                                <td>35.000.000</td>
+                                <td>4h 30m</td>
+                            </tr>
+                            <tr>
+                                <td>Dragoon (Mounted)</td>
+                                <td>800</td>
+                                <td>500</td>
+                                <td>800</td>
+                                <td>Very Fast</td>
+                                <td>16.000.000</td>
+                                <td>5h 15m</td>
+                            </tr>
+                            <tr>
+                                <td>Arbalester (Archer)</td>
+                                <td>700</td>
+                                <td>600</td>
+                                <td>700</td>
+                                <td>Medium</td>
+                                <td>11.700.000</td>
+                                <td>4h 45m</td>
+                            </tr>
+                            <tr>
+                                <td>Catapult (Siege)</td>
+                                <td>900</td>
+                                <td>300</td>
+                                <td>600</td>
+                                <td>Very Slow</td>
+                                <td>0</td>
+                                <td>6h 30m</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="wiki-info-box">
+                    <h4><i class="fas fa-chart-line"></i> Strategic Advice</h4>
+                    <p>For a balanced army composition, aim for approximately 40% ground troops, 30% mounted troops, 25% archers, and 5% siege machines. Adjust these ratios based on your preferred strategy and enemy composition.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Wiki Footer -->
+    <footer class="wiki-footer">
+        <div class="wiki-footer-content">
+            <div class="wiki-footer-section">
+                <h4>Evony Wiki</h4>
+                <p>The complete knowledge base for Evony: The King's Return on server 1366+1402.</p>
+                <div class="wiki-social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="wiki-footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Server Home</a></li>
+                    <li><a href="../index.html#rules">Server Rules</a></li>
+                    <li><a href="../index.html#warScoreData">War Scores</a></li>
+                </ul>
+            </div>
+
+            <div class="wiki-footer-section">
+                <h4>Contribute</h4>
+                <p>Help improve this wiki by submitting your knowledge and strategies.</p>
+                <button class="wiki-contribute-btn">
+                    <i class="fas fa-envelope"></i> Contribute Article
+                </button>
+            </div>
+        </div>
+
+        <div class="wiki-copyright">
+            <p>&copy; <span id="current-year">2023</span> By G4RZK 1366+1402 Evony Server. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../Wiki/js/wiki.js"></script>
+</body>
+</html>

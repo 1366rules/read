@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Guide - Evony Wiki</title>
+    <meta name="author" content="G4RZK">
+    <meta name="keywords" content="Evony, Evony research, Evony academy, Evony guide">
+    <meta name="description" content="Complete guide to research in Evony: The King's Return with academy requirements and research trees.">
+    <link rel="shortcut icon" href="https://www.evony.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300;400;600;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Wiki/css/wiki.css">
+    <style>
+        .research-category {
+            background: rgba(255,255,255,0.03);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .research-tree {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .research-item {
+            background: rgba(110, 69, 226, 0.1);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border-left: 4px solid #6e45e2;
+            transition: all 0.3s ease;
+        }
+        
+        .research-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .research-item h4 {
+            color: #88d3ce;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .research-levels {
+            margin-top: 0.75rem;
+        }
+        
+        .level-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .level-label {
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .level-value {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .requirements-list {
+            margin-top: 1rem;
+            padding-left: 1.5rem;
+        }
+        
+        .requirements-list li {
+            margin-bottom: 0.5rem;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .academy-levels {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .academy-level {
+            background: rgba(255,255,255,0.03);
+            border-radius: 8px;
+            padding: 1.25rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .academy-level h4 {
+            color: #ff7e5f;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        
+        .research-priority {
+            margin-top: 1rem;
+            padding: 0.75rem;
+            background: rgba(255,126,95,0.1);
+            border-left: 3px solid #ff7e5f;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .research-priority h5 {
+            margin-bottom: 0.5rem;
+            color: #ff7e5f;
+        }
+    </style>
+</head>
+
+<body class="wiki-page">
+
+    <!-- Wiki Navigation -->
+    <nav class="wiki-navbar">
+        <div class="wiki-nav-container">
+            <a href="../index.html" class="wiki-logo">1366+1402 <span>WIKI</span></a>
+            <div class="wiki-search-box">
+                <input type="text" placeholder="Search the wiki...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="wiki-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="wiki-nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../Wiki">Wiki Home</a>
+                <a href="pvp-guide.html">PVP Guide</a>
+                <a href="building-guide.html">Building Guide</a>
+                <a href="generals-guide.html">Generals Guide</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Article Hero -->
+    <header class="wiki-hero">
+        <div class="wiki-hero-content">
+            <h1 class="wiki-title-animation">Evony Research Guide</h1>
+            <div class="wiki-meta">
+                <span><i class="fas fa-user-edit"></i> By: Administrator</span>
+                <span><i class="fas fa-calendar-alt"></i> Last Updated: June 25, 2023</span>
+                <span><i class="fas fa-eye"></i> 6,892 Views</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="wiki-container">
+        <aside class="wiki-sidebar">
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-list-ul"></i> Table of Contents</h3>
+                <ul>
+                    <li><a href="#academy-overview"><i class="fas fa-chevron-right"></i> Academy Overview</a></li>
+                    <li><a href="#military-research"><i class="fas fa-chevron-right"></i> Military Research</a></li>
+                    <li><a href="#defense-research"><i class="fas fa-chevron-right"></i> Defense Research</a></li>
+                    <li><a href="#economy-research"><i class="fas fa-chevron-right"></i> Economy Research</a></li>
+                    <li><a href="#advanced-research"><i class="fas fa-chevron-right"></i> Advanced Research</a></li>
+                    <li><a href="#research-priorities"><i class="fas fa-chevron-right"></i> Research Priorities</a></li>
+                </ul>
+            </div>
+
+            <div class="wiki-sidebar-section">
+                <h3><i class="fas fa-bookmark"></i> Related Guides</h3>
+                <ul>
+                    <li><a href="building-guide.html"><i class="fas fa-chevron-right"></i> Building Guide</a></li>
+                    <li><a href="troop-guide.html"><i class="fas fa-chevron-right"></i> Troop Guide</a></li>
+                    <li><a href="generals-guide.html"><i class="fas fa-chevron-right"></i> Generals Guide</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="wiki-content">
+            <section id="academy-overview">
+                <h2><i class="fas fa-graduation-cap"></i> Academy Overview</h2>
+                <p>The Academy is where you conduct research to improve various aspects of your kingdom. Research is divided into four main categories: Military, Defense, Economy, and Advanced.</p>
+                
+                <div class="wiki-info-box">
+                    <h4><i class="fas fa-lightbulb"></i> Key Concept</h4>
+                    <p>Your Academy level determines which research options are available. Higher level research requires a higher level Academy and other building prerequisites.</p>
+                </div>
+                
+                <h3>Academy Level Requirements</h3>
+                <div class="academy-levels">
+                    <div class="academy-level">
+                        <h4>Academy Level 1-10</h4>
+                        <ul class="requirements-list">
+                            <li>Basic research unlocked</li>
+                            <li>Requires Keep level 5</li>
+                            <li>Max research level: 10</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="academy-level">
+                        <h4>Academy Level 11-20</h4>
+                        <ul class="requirements-list">
+                            <li>Intermediate research unlocked</li>
+                            <li>Requires Keep level 15</li>
+                            <li>Max research level: 20</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="academy-level">
+                        <h4>Academy Level 21-30</h4>
+                        <ul class="requirements-list">
+                            <li>Advanced research unlocked</li>
+                            <li>Requires Keep level 25</li>
+                            <li>Max research level: 30</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="academy-level">
+                        <h4>Academy Level 31+</h4>
+                        <ul class="requirements-list">
+                            <li>All research unlocked</li>
+                            <li>Requires Keep level 35</li>
+                            <li>Max research level: 40</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h3>Research Resource Costs</h3>
+                <p>Research requires three main resources:</p>
+                <ul>
+                    <li><strong>Gold:</strong> Essential for doing research</li>
+                    <li><strong>Research Stone:</strong> Needed when doing higher research</li>
+                    <li><strong>Research Scroll:</strong> Special item needed for academy military research</li>
+                    <li><strong>Research Speed up:</strong> Required for high-level research</li>
+                    <li><strong>Research Scrolls:</strong> Very necessary to complete research quickly</li>
+                </ul>
+            </section>
+
+            <section id="military-research">
+                <h2><i class="fas fa-shield-alt"></i> Military Research</h2>
+                <p>Military research focuses on improving your attacking capabilities, troop stats, and march size.</p>
+                
+                <div class="research-tree">
+                    <div class="research-item">
+                        <h4><i class="fas fa-users"></i> Military</h4>
+                        <p>Increases troop attack power for all unit types.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+2% per level</span>
+                            </div>
+                            <div class="level-row">
+                                <span class="level-label">Level 11-20:</span>
+                                <span class="level-value">+1.5% per level</span>
+                            </div>
+                            <div class="level-row">
+                                <span class="level-label">Level 21-30:</span>
+                                <span class="level-value">+1% per level</span>
+                            </div>
+                        </div>
+                        <div class="research-priority">
+                            <h5>Priority: High</h5>
+                            <p>Essential for all players to increase combat effectiveness.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-people-arrows"></i> March Size</h4>
+                        <p>Increases the number of troops you can send in a single march.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+1% per level</span>
+                            </div>
+                            <div class="level-row">
+                                <span class="level-label">Level 11-20:</span>
+                                <span class="level-value">+0.8% per level</span>
+                            </div>
+                        </div>
+                        <ul class="requirements-list">
+                            <li>Requires: Academy Level 15</li>
+                            <li>Requires: Military Tradition Level 10</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-horse-head"></i> Mounted Troop Attack</h4>
+                        <p>Specifically increases attack power for mounted troops.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+3% per level</span>
+                            </div>
+                        </div>
+                        <ul class="requirements-list">
+                            <li>Requires: Stable Level 10</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="defense-research">
+                <h2><i class="fas fa-fort"></i> Defense Research</h2>
+                <p>Defense research improves your city's defensive capabilities and troop survivability.</p>
+                
+                <div class="research-tree">
+                    <div class="research-item">
+                        <h4><i class="fas fa-shield-virus"></i> Defensive Formation</h4>
+                        <p>Increases troop defense power for all unit types.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+2% per level</span>
+                            </div>
+                        </div>
+                        <div class="research-priority">
+                            <h5>Priority: High</h5>
+                            <p>Important for both attackers and defenders.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-heartbeat"></i> Medicine</h4>
+                        <p>Increases hospital capacity and healing speed.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+5% capacity per level</span>
+                            </div>
+                        </div>
+                        <ul class="requirements-list">
+                            <li>Requires: Hospital Level 10</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-shield-alt"></i> Wall Defense</h4>
+                        <p>Increases your wall's defensive power and trap effectiveness.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+3% per level</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="economy-research">
+                <h2><i class="fas fa-coins"></i> Economy Research</h2>
+                <p>Economy research improves your resource production, gathering, and construction speed.</p>
+                
+                <div class="research-tree">
+                    <div class="research-item">
+                        <h4><i class="fas fa-wheat-awn-circle-exclamation"></i> Farming</h4>
+                        <p>Increases food production and gathering speed.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+5% per level</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-hammer"></i> Construction</h4>
+                        <p>Reduces building construction time.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">-3% per level</span>
+                            </div>
+                        </div>
+                        <div class="research-priority">
+                            <h5>Priority: High (Early Game)</h5>
+                            <p>Speeds up your overall development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-truck"></i> Logistics</h4>
+                        <p>Increases marching speed for resource gathering.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+5% per level</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="advanced-research">
+                <h2><i class="fas fa-atom"></i> Advanced Research</h2>
+                <p>Advanced research provides special bonuses and unlocks powerful abilities.</p>
+                
+                <div class="research-tree">
+                    <div class="research-item">
+                        <h4><i class="fas fa-fire"></i> Combat Tactics</h4>
+                        <p>Unlocks special battle formations and tactics.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-5:</span>
+                                <span class="level-value">Unlocks new formations</span>
+                            </div>
+                        </div>
+                        <ul class="requirements-list">
+                            <li>Requires: Academy Level 25</li>
+                            <li>Requires: Military Tradition Level 20</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-user-shield"></i> Hero Development</h4>
+                        <p>Increases general experience gain and skill effectiveness.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+5% per level</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="research-item">
+                        <h4><i class="fas fa-magic"></i> Military Engineering</h4>
+                        <p>Improves siege machine performance and durability.</p>
+                        <div class="research-levels">
+                            <div class="level-row">
+                                <span class="level-label">Level 1-10:</span>
+                                <span class="level-value">+4% per level</span>
+                            </div>
+                        </div>
+                        <ul class="requirements-list">
+                            <li>Requires: Workshop Level 20</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="research-priorities">
+                <h2><i class="fas fa-flag"></i> Research Priorities</h2>
+                <p>Based on your playstyle, focus on these research areas:</p>
+                
+                <div class="wiki-card-grid">
+                    <div class="wiki-card">
+                        <div class="wiki-card-icon" style="background-color: #ff6b6b;">
+                            <i class="fas fa-crosshairs"></i>
+                        </div>
+                        <h3>For Attackers</h3>
+                        <ol>
+                            <li>Military Tradition</li>
+                            <li>March Size</li>
+                            <li>Troop-specific Attack</li>
+                            <li>Combat Tactics</li>
+                        </ol>
+                    </div>
+
+                    <div class="wiki-card">
+                        <div class="wiki-card-icon" style="background-color: #4ecdc4;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>For Defenders</h3>
+                        <ol>
+                            <li>Defensive Formation</li>
+                            <li>Wall Defense</li>
+                            <li>Medicine</li>
+                            <li>Trap Building</li>
+                        </ol>
+                    </div>
+
+                    <div class="wiki-card">
+                        <div class="wiki-card-icon" style="background-color: #ff9f43;">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3>For Farmers</h3>
+                        <ol>
+                            <li>Construction</li>
+                            <li>Resource Production</li>
+                            <li>Logistics</li>
+                            <li>Gathering Speed</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="wiki-info-box">
+                    <h4><i class="fas fa-clock"></i> Research Speed Tips</h4>
+                    <ul>
+                        <li>Use research speedups during events for bonus rewards</li>
+                        <li>Focus on one research category at a time to maximize efficiency</li>
+                        <li>Upgrade your Academy as soon as possible to unlock higher level research</li>
+                        <li>Join an alliance with research help to reduce research time</li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <!-- Wiki Footer -->
+    <footer class="wiki-footer">
+        <div class="wiki-footer-content">
+            <div class="wiki-footer-section">
+                <h4>Evony Wiki</h4>
+                <p>The complete knowledge base for Evony: The King's Return on server 1366+1402.</p>
+                <div class="wiki-social-links">
+                    <a href="#"><i class="fab fa-discord"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+
+            <div class="wiki-footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Server Home</a></li>
+                    <li><a href="../index.html#rules">Server Rules</a></li>
+                    <li><a href="../index.html#warScoreData">War Scores</a></li>
+                </ul>
+            </div>
+
+            <div class="wiki-footer-section">
+                <h4>Contribute</h4>
+                <p>Help improve this wiki by submitting your knowledge and strategies.</p>
+                <button class="wiki-contribute-btn">
+                    <i class="fas fa-envelope"></i> Contribute Article
+                </button>
+            </div>
+        </div>
+
+        <div class="wiki-copyright">
+            <p>&copy; <span id="current-year">2023</span> By G4RZK 1366+1402 Evony Server. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../Wiki/js/wiki.js"></script>
+</body>
+</html>
