@@ -554,7 +554,7 @@ h1, h2, h3, h4 {
   }
   
   .table-header::after {
-      content: "War Score Data - Scroll horizontally to view all data";
+      content: "Server War Score - Scroll horizontally to view all data";
       display: block;
       padding: 0.5rem;
       text-align: center;
@@ -700,7 +700,7 @@ h1, h2, h3, h4 {
   }
   
   .table-header::after {
-      content: "War Score Data";
+      content: "Server War Score";
       display: block;
       font-weight: 600;
       padding: 0.5rem;
