@@ -108,6 +108,7 @@ h1, h2, h3, h4 {
     padding: 0 5%;
     position: relative;
     overflow: hidden;
+    background: url('/img/evony.png') center/cover no-repeat;
 }
 
 .hero::before {
@@ -117,13 +118,24 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 30% 50%, rgba(110, 69, 226, 0.2) 0%, rgba(15, 15, 27, 0.9) 70%);
-    z-index: -1;
+    background: rgba(15, 15, 27, 0.85); /* Dark overlay to make text more readable */
+    z-index: 0;
 }
 
 .hero-content {
     max-width: 600px;
     animation: fadeInUp 1s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-image {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+    height: 90%;
+    animation: float 6s ease-in-out infinite;
+    z-index: 1;
 }
 
 .hero h1 {
@@ -246,7 +258,7 @@ h1, h2, h3, h4 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('/img/evony.png') repeat;
+    background: url('/img/evony.png') center/cover no-repeat;
     opacity: 0.03;
     z-index: -1;
 }
@@ -490,6 +502,52 @@ h1, h2, h3, h4 {
     color: #f44336;
 }
 
+.winlose {
+    text-align: center;
+    font-weight: 600;
+}
+
+.winlose.win {
+    color: #4caf50; /* Green for Win */
+}
+
+.winlose.lose {
+    color: white; /* White for Lose */
+}
+
+/* Add this to your existing media queries for responsiveness */
+@media (max-width: 992px) {
+    .table-row {
+        grid-template-columns: 80px 2fr 1.5fr 1fr 1fr; /* Adjusted for Win/Lose column */
+    }
+    
+    .balance {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .table-row {
+        grid-template-columns: 50px 2fr 1fr;
+        grid-template-areas: 
+            "rank player player"
+            "alliance positive negative";
+    }
+    
+    .winlose {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .table-row {
+        grid-template-columns: 40px 1fr;
+        grid-template-areas: 
+            "rank player"
+            "positive negative";
+    }
+}
+
 .loading-row {
     grid-column: 1 / -1;
     padding: 2rem;
@@ -698,8 +756,8 @@ h1, h2, h3, h4 {
   }
   
   .player-avatar {
-      width: 28px;
-      height: 28px;
+      width: 32px;
+      height: 32px;
       font-size: 0.8rem;
   }
   
