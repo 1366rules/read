@@ -1,5 +1,12 @@
 // SERVER WAR DATA 1366+1402
 const warScoreData = {
+	"2025-04-28": [
+		{ rank: 1, name: "GAIA", alliance: "SCC", positive: 2852066301, negative: 2082045184, balance: 770021117 },
+		{ rank: 2, name: "BAY ", alliance: "SCC", positive: 2200354901, negative: 1534616064, balance: 665738837 },
+		{ rank: 3, name: "xxxODINxxx", alliance: "SCC", positive: 1752234656, negative: 2196006912, balance: -443772256 },
+		{ rank: 4, name: "KAKLONG", alliance: "SCC", positive: 1722283254, negative: 1819576576, balance: -97293322 },
+		{ rank: 5, name: "昴星団", alliance: "ELM", positive: 1194129603, negative: 3979782912, balance: -2785653309 }
+	],
 	"2025-04-14": [
 		{ rank: 1, name: "BAY ", alliance: "KMS", positive: 3460415783, negative: 1621317376, balance: 1839098407 },
 		{ rank: 2, name: "ONE", alliance: "MOO", positive: 2762878262, negative: 1438462592, balance: 1324415670 },
